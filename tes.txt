@@ -1,0 +1,34 @@
+var location1 = {
+        info: '<strong>Aceh</strong><br>\
+                    Gempa Bumi<br>\
+                    <a href="https://goo.gl/fTcRpy">Check Details</a>',
+        lat: 4.724616,
+        long: 96.525879
+    };
+
+    var location2 = {
+        info: '<strong>Bondowoso</strong><br>\
+                    Banjir Bandang<br>\
+                    <a href="https://goo.gl/UORHWv">Check Details</a>',
+        lat: -7.925229,
+        long: 113.837585
+    };
+
+    var location3 = {
+        info: '<strong>Sukabumi</strong><br>\r\
+                    Tanah Longosr<br>\
+                    <a href="https://goo.gl/7kx16n">Check Details</a>',
+        lat: -6.933880,
+        long: 106.932678
+    };
+    var locations = [
+      [location1.info, location1.lat, location1.long, 0],
+      [location2.info, location2.lat, location2.long, 1],
+      [location3.info, location3.lat, location3.long, 2],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: new google.maps.LatLng(-2.037170, 115.598145),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
