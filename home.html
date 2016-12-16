@@ -70,6 +70,7 @@
             <li><a href="#donasibarang"><i class="fa-mobile"></i>Donasi Barang</a></li>
             <!-- pricing = Kebutuhan -->
             <li><a href="#kebutuhan"><i class="fa-usd"></i>Kebutuhan</a></li>
+            <li><a href="#kondisiterkini"><i class="fa-usd"></i>Kondisi Terkini</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
     </div>
@@ -437,6 +438,39 @@
         </div>
     </div>
 </section>
+<section id="kondisiterkini" class="">
+    <div class="container">
+        <div class="row">
+            <br>
+            <div class="intro text-center">
+              <h1>Kondisi <span class="bold">Terkini</span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a href="/img/disaster-pict-1.jpg" target="_blank">
+                  <img src="img/disaster-pict-1.jpg" alt="Disaster Picture" style="width:100%">
+                  <div class="caption">
+                    <p><span class="bold">India</span>, Tue 01-01-2009 06:00:25<br>Kondisi terkini evakuasi korban banjir bandang.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a href="/img/disaster-pict-2.jpg" target="_blank">
+                  <img src="img/disaster-pict-2.jpg" alt="Disaster Picture" style="width:100%">
+                  <div class="caption">
+                    <p><span class="bold">Filipina</span>, Mon 18-02-2007 08:02:34<br>Kondisi terkini setelah gempa bumi berakhir.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- CONTACT US -->
 <section id="contact-us" class="contact-us half-bg half-bg-sm left">
@@ -635,7 +669,7 @@
     var location1 = {
         info: '<strong>Aceh</strong><br>\
                     Gempa Bumi<br>\
-                    <a href="https://goo.gl/maps/jKNEDz4SyyH2">Check Details</a>',
+                    <a href="https://goo.gl/fTcRpy">Check Details</a>',
         lat: 4.724616,
         long: 96.525879
     };
@@ -643,7 +677,7 @@
     var location2 = {
         info: '<strong>Bondowoso</strong><br>\
                     Banjir Bandang<br>\
-                    <a href="https://goo.gl/maps/PHfsWTvgKa92">Check Details</a>',
+                    <a href="https://goo.gl/UORHWv">Check Details</a>',
         lat: -7.925229,
         long: 113.837585
     };
@@ -651,10 +685,21 @@
     var location3 = {
         info: '<strong>Sukabumi</strong><br>\r\
                     Tanah Longosr<br>\
-                    <a href="https://goo.gl/maps/QGUrqZPsYp92">Check Details</a>',
+                    <a href="https://goo.gl/7kx16n">Check Details</a>',
         lat: -6.933880,
         long: 106.932678
     };
+    var locations = [
+      [location1.info, location1.lat, location1.long, 0],
+      [location2.info, location2.lat, location2.long, 1],
+      [location3.info, location3.lat, location3.long, 2],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: new google.maps.LatLng(-2.037170, 115.598145),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
     var locations = [
       [location1.info, location1.lat, location1.long, 0],
       [location2.info, location2.lat, location2.long, 1],
