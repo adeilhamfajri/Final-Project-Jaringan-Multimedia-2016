@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/jquery.circliful.css">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style_maps.css" rel="stylesheet">
 
     <!-- Include here any theme you wish -->
     <!-- <link rel="stylesheet" href="css/themes/{theme}.css"> -->
@@ -84,9 +86,9 @@
     <div class="container light-bg">
         <div class="intro text-center">
             <h1>Bantu Kami <span class="bold">Sekarang Juga</span></h1>
-            <p><span class="accent">Support. Us. Donate. Now.</span></p>
+            <p class="subtitle">Telah terjadi bencana di lokasi berikut</p>
 
-            <div class="mockup-wrapper">
+<!--             <div class="mockup-wrapper">
                 <figure class="mockup mockup-tablet">
                     <img src="img/header/3.png" alt="" />
                 </figure>
@@ -96,27 +98,27 @@
             </div>
 
             <div class="row">
-                <!--map disini-->
-            </div>
+                
+            </div> -->
         </div>
     </div>
     </header>
 
 
     <!-- ABOUT SECTION -->
-<section id="" class="about">
-    <div class="container">
-        <div class="row">
+<!-- <section id="" class="about"> -->
+    <div class="container" style="width:100%;" id="map">
+<!--         <div class="row">
             <div class="section-heading">
                 <h2 class="line left"><span class="bold">Bantu Kami</span></h2>
                 <p class="subtitle">Telah terjadi bencana di lokasi berikut</p>
             </div>
-        </div>
-        <div class="row">
-            <!--map untuk lokasi bencana-->
-        </div>
+        </div> -->
     </div>
-</section>
+    <script async defer 
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8wgmAbnuvLLjtEcBC6fIeFkfYbFhXi5Q&callback=initMap">
+    </script>
+<!-- </section> -->
 
     <!-- FEATURES SECTION -->
 <section id="donasidana" class="">
@@ -623,3 +625,63 @@
 <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+<script>
+    function initMap() {
+
+    var location1 = {
+        info: '<strong>Aceh</strong><br>\
+                    Gempa Bumi<br>\
+                    <a href="https://goo.gl/maps/jKNEDz4SyyH2">Check Details</a>',
+        lat: 4.724616,
+        long: 96.525879
+    };
+
+    var location2 = {
+        info: '<strong>Bondowoso</strong><br>\
+                    Banjir Bandang<br>\
+                    <a href="https://goo.gl/maps/PHfsWTvgKa92">Check Details</a>',
+        lat: -7.925229,
+        long: 113.837585
+    };
+
+    var location3 = {
+        info: '<strong>Sukabumi</strong><br>\r\
+                    Tanah Longosr<br>\
+                    <a href="https://goo.gl/maps/QGUrqZPsYp92">Check Details</a>',
+        lat: -6.933880,
+        long: 106.932678
+    };
+    var locations = [
+      [location1.info, location1.lat, location1.long, 0],
+      [location2.info, location2.lat, location2.long, 1],
+      [location3.info, location3.lat, location3.long, 2],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 5,
+        center: new google.maps.LatLng(-2.037170, 115.598145),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow({});
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            return function () {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+            }
+        })(marker, i));
+    }
+}
+</script>
