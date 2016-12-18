@@ -197,7 +197,7 @@
                         <div class="panel panel-violet">
                             <div class="panel-heading" align="center">Kelola Donasi Dana</div>
                             <div class="panel-body">
-                            <form method="POST" action="<?php echo base_url().'index.php/crud_danamasuk/do_insert' ?>" enctype="multipart/form-data">
+                            <form method="POST" action="<?php echo base_url().'index.php/crud_danamasuk/do_update' ?>" enctype="multipart/form-data">
                                 <table class="table table-hover table-striped">
                                     <thead>
                                     <tr>
@@ -208,23 +208,12 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($data as $temp) { ?>
+
                                     <tr>
-                                        <td><?php echo $temp['id_dana']; ?></td>
-                                        <td><?php echo $temp['nominal']; ?></td>
-                                        <td><?php echo $temp['nama_donatur']; ?></td>
-                                        <td><?php echo $temp['tanggal']; ?></td>
-                                        <td>
-                                            <button>Hapus Data</button>
-                                            <a class="btn btn-block btn-info" value="Edit" href="<?php echo base_url()."index.php/crud_danamasuk/do_edit/".$temp['id_dana']; ?>">Edit</a>
-                                        </td>  
-                                    </tr>
-                                    <?php   } ?>
-                                    <tr>
-                                        <td> </td>
-                                        <td><input type="text" name="nominal" /></td>
-                                        <td><input type="text" name="nama_donatur" /></td>
-                                        <td><button class="label label-sm label-success" type="submit">Tambah</button></td>   
+                                        <td><input type="hidden" name="nominal" value="<?php echo $id_dana; ?>" /></td>
+                                        <td><input type="text" name="nominal" value="<?php echo $nominal; ?>" /></td>
+                                        <td><input type="text" name="nama_donatur" value="<?php echo $nama_donatur; ?>" /></td>
+                                        <td><button class="label label-sm label-success" type="submit">Update</button></td>   
                                     </tr>
                                    
                                    
