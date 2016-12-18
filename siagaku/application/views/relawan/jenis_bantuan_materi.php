@@ -122,10 +122,10 @@
             </li>
             
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/kebutuhan_korban'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_kebutuhan/kebutuhan_korban'; ?>">
                     <i class="fa fa-th-list fa-fw"><div class="icon-bg bg-blue"></div></i>
                     <span class="menu-title">Kebutuhan Korban</span>
-                </a>      
+                </a>
             </li>
 
             <li>

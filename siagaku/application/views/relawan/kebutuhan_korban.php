@@ -44,8 +44,8 @@
                 </form>
                 <div class="news-update-box hidden-xs"><span class="text-uppercase mrm pull-left text-white">News:</span>
                     <ul id="news-update" class="ticker list-unstyled">
-                        <li>Welcome to KAdmin - Responsive Multi-Style Admin Template</li>
-                        <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</li>
+                        <li>Selamat datang di Siagaku</li>
+                        <li>Disini anda dapat menyampaikan laporan distribusi bencana secara real time dan akurat.</li>
                     </ul>
                 </div>
                 <ul class="nav navbar navbar-top-links navbar-right mbn">
@@ -122,10 +122,10 @@
             </li>
             
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/kebutuhan_korban'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_kebutuhan/kebutuhan_korban'; ?>">
                     <i class="fa fa-th-list fa-fw"><div class="icon-bg bg-blue"></div></i>
                     <span class="menu-title">Kebutuhan Korban</span>
-                </a>      
+                </a>
             </li>
 
             <li>
@@ -136,14 +136,14 @@
             </li>
 
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/bantuan_materi'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_donasibarang/bantuan_materi'; ?>">
                     <i class="fa fa-edit fa-fw"><div class="icon-bg bg-red"></div></i>
                     <span class="menu-title">Bantuan Materi</span>
                 </a>
             </li>
 
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/jenis_bantuan_materi'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_jenisbarang/jenis_bantuan_materi'; ?>">
                     <i class="fa fa-edit fa-fw"><div class="icon-bg bg-yellow"></div></i>
                     <span class="menu-title">Jenis Bantuan Materi</span>
                 </a>
@@ -170,7 +170,7 @@
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
                         <li class="hidden"><a href="#">Tables</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="active">Tables</li>
+                        <li class="active">Kebutuhan Korban</li>
                     </ol>
                     <div class="clearfix">
                     </div>
@@ -193,57 +193,126 @@
                             <div class="row">
                     <br/><br/><br/>
                     <div class="col-lg-12">
-                        <div class="panel panel-violet">
+                        <div class="panel panel-green">
                             <div class="panel-heading" align="center">Kebutuhan Korban Bencana</div>
                             <div class="panel-body">
-                                <table class="table table-hover table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>ID Kebutuhan</th>
-                                        <th>Lokasi</th>
-                                        <th>Materi</th>
-                                        <th>Jumlah</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>KK001</td>
-                                        <td>Pidie Aceh</td>
-                                        <td>Indomie</td>
-                                        <td>3</td>
-                                        <td>
-                                            <button>Hapus Data</button>
-                                            <button>Edit</button>
-                                        </td>  
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td> </td>
-                                        <td> 
-                                            <select class="form-control">
-                                                <option></option>
-                                                <option value="0">Pidie, Aceh</option>
-                                                <option value="1">Indarung, Padang</option>
-                                                <option value="2">Tora-tora, Medan</option>
-                                            </select>
-                                        </td>
-                                        <td>
-                                            <select class="form-control">
-                                                <option></option>
-                                                <option value="0">Indomie</option>
-                                                <option value="1">Selimut</option>
-                                                <option value="2">P3K</option>
-                                            </select>
-                                        </td>
-                                        <td><input type="text"/></td>
-                                        <td><button class="label label-sm label-success">Tambah</button></td>   
-                                    </tr>
-                                   
-                                   
-                                    </tbody>
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Lokasi</th>
+                                                        <th>Barang</th>
+                                                        <th>Jumlah Dibutuhkan</th>
+                                                        <th>Jumlah Terpenuhi</th>
+                                                        <th>Tanggal Permintaan</th>
+                                                        <th>Aksi</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <form method="post" action="<?php echo base_url(); ?>index.php/crud_kebutuhan/tambah_kebutuhan">
+                                                            <td>
+                                                                <select class="form-control" name="id_lokasi">
+                                                                <?php
+                                                                    foreach ($lokasi as $key) {
+                                                                ?>
+                                                                        <option value="<?php echo $key['id_lokasi']; ?>">
+                                                                            <?php echo $key['nama_lokasi']; ?>
+                                                                        </option>
+                                                                <?php } ?>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control" name="id_barang">
+                                                                <?php
+                                                                    foreach ($barang as $key) {
+                                                                ?>
+                                                                        <option value="<?php echo $key->id_barang; ?>">
+                                                                            <?php echo $key->nama_barang; ?>
+                                                                        </option>
+                                                                <?php } ?>
+                                                                </select>
+                                                            </td>
+                                                            <td><input type="text" name="jumlah_kebutuhan" /></td>
+                                                            <td>0</td>
+                                                            <td>
+                                                                <input type="text" name="tanggal_permintaan" value="<?php echo date('Y-m-d H:i:s'); ?>" readonly/>
+                                                            </td>
+                                                            <td><input type="submit" class="btn btn-success" value="Tambah"></td>   
+                                                        </form>
+                                                        
+                                                    </tr>
+                                                    <?php
+                                                        foreach($kebutuhan as $baris){
+                                                            if (isset($cek) && $cek == $baris->id_kebutuhan) {
+                                                    ?>
+                                                                <form method="post" action="<?php echo base_url(); ?>index.php/crud_kebutuhan/edit_kebutuhan/<?php echo $cek; ?>">
+                                                                    <td>
+                                                                        <select class="form-control" name="id_lokasi">
+                                                                        <?php
+                                                                            foreach ($lokasi as $key) {
+                                                                        ?>
+                                                                                <option value="<?php echo $key['id_lokasi']; ?>" <?php if ($baris->id_lokasi == $key['id_lokasi']) echo "selected"; ?>>
+                                                                                    <?php echo $key['nama_lokasi']; ?>
+                                                                                </option>
+                                                                        <?php } ?>
+                                                                        </select>
+                                                                    </td>
+                                                                    <td>
+                                                                        <select class="form-control" name="id_barang">
+                                                                        <?php
+                                                                            foreach ($barang as $key) {
+                                                                        ?>
+                                                                                <option value="<?php echo $key->id_barang; ?>" <?php if ($baris->id_barang == $key->id_barang) echo "selected"; ?>>
+                                                                                    <?php echo $key->nama_barang; ?>
+                                                                                </option>
+                                                                        <?php } ?>
+                                                                        </select>
+                                                                    </td>
+                                                                    <td><input type="text" name="jumlah_kebutuhan" value="<?php echo $baris->jumlah_kebutuhan; ?>"/></td>
+                                                                    <td><?php echo $baris->jumlah_terpenuhi; ?></td>
+                                                                    <td>
+                                                                        <input type="text" name="tanggal_permintaan" value="<?php echo $baris->tanggal_permintaan; ?>" readonly/>
+                                                                    </td>
+                                                                    <td><input type="submit" class="btn btn-success" value="Update"></td>   
+                                                                </form>
+                                                    <?php
+                                                            }else {
+                                                    ?>
+                                                        <tr>
+                                                            <td>
+                                                                <?php
+                                                                foreach ($lokasi as $key) {
+                                                                    if ($key['id_lokasi'] == $baris->id_lokasi) {
+                                                                        echo $key['nama_lokasi'];
+                                                                    }
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <td>
+                                                                <?php
+                                                                foreach ($barang as $key) {
+                                                                    if ($key->id_barang == $baris->id_barang) {
+                                                                        echo $key->nama_barang;
+                                                                    }
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <td><?php echo $baris->jumlah_kebutuhan; ?></td>
+                                                            <td><?php echo $baris->jumlah_terpenuhi; ?></td>
+                                                            <td><?php echo $baris->tanggal_permintaan; ?></td>
+                                                            <td>
+                                                            <a class="btn btn-warning" href="<?php echo base_url(); ?>index.php/crud_kebutuhan/show_editkebutuhan/<?php echo $baris->id_kebutuhan; ?>">Edit</a>&nbsp;
+                                                            <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/crud_kebutuhan/hapus_kebutuhan/<?php echo $baris->id_kebutuhan; ?>">Hapus</a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+                                                    </tbody>
 
-                                </table>
-                            </div>
+                                                </table>
+                                            </div>
                               
                         </div>
 
