@@ -26,6 +26,6 @@ class kebutuhan_model extends CI_Model{
 	
 	public function insertKebutuhan($KebutuhanData)
 	{
-		$this->db->insert('lokasi', $KebutuhanData);
+		$this->db->insert('kebutuhan', $KebutuhanData);
 	}
 }
