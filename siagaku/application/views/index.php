@@ -147,81 +147,13 @@
                   </tr>
                 </thead>
                 <tbody>
+				<?php foreach($dana as $row) { ?>
                   <tr>
-                    <td>31 September 2026</td>
-                    <td>Ade Ilham</td>
-                    <td>5000000</td>
+                    <td><?php echo date_format(date_create($row->tanggal),"d F Y") ?></td>
+                    <td><?php echo $row->nama_donatur ?></td>
+                    <td><?php echo $row->nominal ?></td>
                   </tr>
-                  <tr>
-                    <td>5 Februari 2010</td>
-                    <td>Imam Zarqoni</td>
-                    <td>15000000</td>
-                  </tr>
-                  <tr>
-                    <td>17 Maret 2013</td>
-                    <td>Divi</td>
-                    <td>2250000</td>
-                  </tr>
-                  <tr>
-                    <td>23 Oktober 2015</td>
-                    <td>Divi</td>
-                    <td>7500000</td>
-                  </tr>
-                  <tr>
-                    <td>1 November 2016</td>
-                    <td>Luqman Ahmad</td>
-                    <td>3500000</td>
-                  </tr>
-                  <tr>
-                    <td>31 September 2026</td>
-                    <td>Ade Ilham</td>
-                    <td>5000000</td>
-                  </tr>
-                  <tr>
-                    <td>5 Februari 2010</td>
-                    <td>Imam Zarqoni</td>
-                    <td>15000000</td>
-                  </tr>
-                  <tr>
-                    <td>17 Maret 2013</td>
-                    <td>Divi</td>
-                    <td>2250000</td>
-                  </tr>
-                  <tr>
-                    <td>23 Oktober 2015</td>
-                    <td>Divi</td>
-                    <td>7500000</td>
-                  </tr>
-                  <tr>
-                    <td>1 November 2016</td>
-                    <td>Luqman Ahmad</td>
-                    <td>3500000</td>
-                  </tr>
-                  <tr>
-                    <td>31 September 2026</td>
-                    <td>Ade Ilham</td>
-                    <td>5000000</td>
-                  </tr>
-                  <tr>
-                    <td>5 Februari 2010</td>
-                    <td>Imam Zarqoni</td>
-                    <td>15000000</td>
-                  </tr>
-                  <tr>
-                    <td>17 Maret 2013</td>
-                    <td>Divi</td>
-                    <td>2250000</td>
-                  </tr>
-                  <tr>
-                    <td>23 Oktober 2015</td>
-                    <td>Divi</td>
-                    <td>7500000</td>
-                  </tr>
-                  <tr>
-                    <td>1 November 2016</td>
-                    <td>Luqman Ahmad</td>
-                    <td>3500000</td>
-                  </tr>
+				<?php } ?>
                 </tbody>
               </table>
             </div>

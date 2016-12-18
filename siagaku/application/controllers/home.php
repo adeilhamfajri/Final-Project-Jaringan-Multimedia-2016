@@ -20,7 +20,9 @@ class home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('index');
+		$this->load->model('dana_model');
+		$data['dana'] = $this->dana_model->getLastDana();
+		$this->load->view('index',$data);
 	}
 
 	public function login()
