@@ -11,7 +11,7 @@ class lokasi_model extends CI_Model{
 	public function getLocationById($id)
 	{
 		$this->db->from('lokasi');
-		$this->db->where('id_lokasi',$id);
+		$this->db->where('lokasi.id_lokasi',$id);
 		$query = $this->db->get();
 		return $query->result();
 	}
