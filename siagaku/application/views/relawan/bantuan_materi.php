@@ -44,8 +44,8 @@
                 </form>
                 <div class="news-update-box hidden-xs"><span class="text-uppercase mrm pull-left text-white">News:</span>
                     <ul id="news-update" class="ticker list-unstyled">
-                        <li>Welcome to KAdmin - Responsive Multi-Style Admin Template</li>
-                        <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</li>
+                        <li>Selamat datang di Siagaku</li>
+                        <li>Disini anda dapat menyampaikan laporan distribusi bencana secara real time dan akurat.</li>
                     </ul>
                 </div>
                 <ul class="nav navbar navbar-top-links navbar-right mbn">
@@ -138,14 +138,14 @@
             </li>
 
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/bantuan_materi'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_donasibarang/bantuan_materi'; ?>">
                     <i class="fa fa-edit fa-fw"><div class="icon-bg bg-red"></div></i>
                     <span class="menu-title">Bantuan Materi</span>
                 </a>
             </li>
 
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/jenis_bantuan_materi'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_jenisbarang/jenis_bantuan_materi'; ?>">
                     <i class="fa fa-edit fa-fw"><div class="icon-bg bg-yellow"></div></i>
                     <span class="menu-title">Jenis Bantuan Materi</span>
                 </a>
@@ -174,7 +174,7 @@
                         <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Home</a>&nbsp;&nbsp;<i
                             class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
                         <li class="hidden"><a href="#">Forms</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="active">Forms</li>
+                        <li class="active">Bantuan Materi</li>
                     </ol>
                     <div class="clearfix">
                     </div>
@@ -194,49 +194,93 @@
                             <span><div align="center" class="col-lg-12"></span>
                                 <div align="center" class="row">
                                     <div align="center" class="col-lg-12">
-                                        
                                         <div align="center" class="panel panel-orange">
-                                            <div class="panel-heading">
-                                                Catat Bantuan Materi</div>
-                                            <div class="panel-body pan">
-                                                <form action="#">
-                                                <div class="form-body pal">
-                                                   
-                                              
-                                                   
-                                                    </div>
-                                                    <hr />
-                                                    <div class="row">
-                                                     
-                                                    </div>
+                                            <div class="panel-heading" align="center">Data Donasi Barang</div>
+                                            <div class="panel-body">
+                                                <table class="table table-hover table-striped">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Barang</th>
+                                                        <th>Jumlah</th>
+                                                        <th>Donatur</th>
+                                                        <th>Tanggal</th>
+                                                        <th>Aksi</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <form method="post" action="<?php echo base_url(); ?>index.php/crud_donasibarang/tambah_donasi">
+                                                            <td>
+                                                                <select class="form-control" name="id_barang">
+                                                                <?php
+                                                                    foreach ($barang as $key) {
+                                                                ?>
+                                                                        <option value="<?php echo $key->id_barang; ?>">
+                                                                            <?php echo $key->nama_barang; ?>
+                                                                        </option>
+                                                                <?php } ?>
+                                                                </select>
+                                                            </td>
+                                                            <td><input type="text" name="jumlah_donasi" /></td>
+                                                            <td><input type="text" name="nama_donatur" /></td>
+                                                            <td>
+                                                                <input type="text" name="tanggal_donasi" value="<?php echo date('Y-m-d'); ?>" readonly/>
+                                                            </td>
+                                                            <td><input type="submit" class="btn btn-success" value="Tambah"></td>   
+                                                        </form>
+                                                        
+                                                    </tr>
+                                                    <?php
+                                                        foreach($donasi as $baris){
+                                                            if (isset($cek) && $cek == $baris->id_donasi) {
+                                                    ?>
+                                                                <form method="post" action="<?php echo base_url(); ?>index.php/crud_donasibarang/edit_donasi/<?php echo $cek; ?>">
+                                                                    <td>
+                                                                        <select class="form-control" name="id_barang">
+                                                                        <?php
+                                                                            foreach ($barang as $key) {
+                                                                        ?>
+                                                                                <option value="<?php echo $key->id_barang; ?>" <?php if ($baris->id_barang == $key->id_barang) echo "selected"; ?>>
+                                                                                    <?php echo $key->nama_barang; ?>
+                                                                                </option>
+                                                                        <?php } ?>
+                                                                        </select>
+                                                                    </td>
+                                                                    <td><input type="text" name="jumlah_donasi" value="<?php echo $baris->jumlah_donasi; ?>"/></td>
+                                                                    <td><input type="text" name="nama_donatur" value="<?php echo $baris->nama_donatur; ?>"/></td>
+                                                                    <td>
+                                                                        <input type="text" name="tanggal_donasi" value="<?php echo $baris->tanggal_donasi; ?>" readonly/>
+                                                                    </td>
+                                                                    <td><input type="submit" class="btn btn-success" value="Update"></td>   
+                                                                </form>
+                                                    <?php
+                                                            }else {
+                                                    ?>
+                                                        <tr>
+                                                            <td>
+                                                                <?php
+                                                                foreach ($barang as $key) {
+                                                                    if ($key->id_barang == $baris->id_barang) {
+                                                                        echo $key->nama_barang;
+                                                                    }
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                            <td><?php echo $baris->jumlah_donasi; ?></td>
+                                                            <td><?php echo $baris->nama_donatur; ?></td>
+                                                            <td><?php echo $baris->tanggal_donasi; ?></td>
+                                                            <td>
+                                                            <a class="btn btn-warning" href="<?php echo base_url(); ?>index.php/crud_donasibarang/show_editdonasi/<?php echo $baris->id_donasi; ?>">Edit</a>&nbsp;
+                                                            <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/crud_donasibarang/hapus_donasi/<?php echo $baris->id_donasi; ?>">Hapus</a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php
+                                                        }
+                                                    }
+                                                    ?>
+                                                    </tbody>
 
-                                                     <div class="form-group">
-                                                     <label for="inputSubject" class="control-label">Jenis Bantuan Materi</label>
-                                                        <div class="form-group">
-                                                         <select class="form-control">
-                                                            <option> </option>
-                                                            <option value="0">Selimut</option>
-                                                            <option value="1">Pakaian Anak-anak (stel)</option>
-                                                            <option value="2">Popok</option>
-                                                            <option value="0">Indomie (dust)</option>
-                                                            <option value="1">Obat (pack)</option>
-                                                        </select></div>
-
-
-                                                <br/><br/>
-                                                </div>
-                                                    <div class="form-group">
-                                                         <input id="inputSubject" type="text" placeholder="Jumlah" class="form-control" />
-                                                    </div>
-
-                                                    <div><div/>
-                                                    <br/><br/>
-                                                   
-                                                <div class="form-actions text-right pal">
-                                                    <button type="submit" class="btn btn-primary">
-                                                        Submit</button>
-                                                </div>
-                                                </form>
+                                                </table>
                                             </div>
                                         </div>
                                 

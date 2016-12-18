@@ -136,7 +136,7 @@
             </li>
 
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/bantuan_materi'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_donasibarang/bantuan_materi'; ?>">
                     <i class="fa fa-edit fa-fw"><div class="icon-bg bg-red"></div></i>
                     <span class="menu-title">Bantuan Materi</span>
                 </a>
