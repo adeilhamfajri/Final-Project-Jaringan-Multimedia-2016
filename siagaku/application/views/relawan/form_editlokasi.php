@@ -159,6 +159,7 @@
     </div>
 </nav>
 <!--END SIDEBAR MENU-->
+
           
           
             <div id="page-wrapper">
@@ -195,41 +196,35 @@
                     <br/><br/><br/>
                     <div class="col-lg-12">
                         <div class="panel panel-violet">
-                            <div class="panel-heading" align="center">Kelola Donasi Dana</div>
+                            <div class="panel-heading" align="center">Kelola Lokasi Bencana</div>
                             <div class="panel-body">
-                            <form method="POST" action="<?php echo base_url().'index.php/crud_danamasuk/do_insert' ?>" enctype="multipart/form-data">
+                            <form method="POST" action="<?php echo base_url().'index.php/crud_lokasi/do_update' ?>" enctype="multipart/form-data">
                                 <table class="table table-hover table-striped">
+                                
                                     <thead>
                                     <tr>
-                                        <th>ID Donasi</th>
-                                        <th>Nominal</th>
-                                        <th>Nama Donatur</th>
-                                        <th>Tanggal Donasi</th>
+                                        <th>ID Lokasi</th>
+                                        <th>Nama Lokasi</th>
+                                        <th>Latitude</th>
+                                        <th>Longitude</th>
+                                        <th>Deskripsi</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($data as $temp) { ?>
+                                   
                                     <tr>
-                                        <td><?php echo $temp['id_dana']; ?></td>
-                                        <td><?php echo $temp['nominal']; ?></td>
-                                        <td><?php echo $temp['nama_donatur']; ?></td>
-                                        <td><?php echo $temp['tanggal']; ?></td>
-                                        <td>
-                                            <button>Hapus Data</button>
-                                            <a class="btn btn-block btn-info" value="Edit" href="<?php echo base_url()."index.php/crud_danamasuk/do_edit/".$temp['id_dana']; ?>">Edit</a>
-                                        </td>  
-                                    </tr>
-                                    <?php   } ?>
-                                    <tr>
-                                        <td> </td>
-                                        <td><input type="text" name="nominal" /></td>
-                                        <td><input type="text" name="nama_donatur" /></td>
-                                        <td><button class="label label-sm label-success" type="submit">Tambah</button></td>   
+                                        <td><input type="hidden" name="id_lokasi" value="<?php echo $id_lokasi; ?>"> </td>
+                                        <td><input type="text" name="nama_lokasi" value="<?php echo $nama_lokasi; ?>" /></td>
+                                        <td><input type="text" name="latitude" value="<?php echo $latitude; ?>" /></td>
+                                        <td><input type="text" name="longitude" value="<?php echo $longitude; ?>" /></td>
+                                        <td><input type="text" name="deskripsi" value="<?php echo $deskripsi; ?>" /></td>
+                                        
+                                        <td><button class="label label-sm label-success" type="submit">Update</button></td>   
                                     </tr>
                                    
                                    
                                     </tbody>
-
+                               
                                 </table>
                                 </form>
                             </div>
@@ -259,7 +254,7 @@
             <!--END PAGE WRAPPER-->
         </div>
     </div>
-     <script src="<?php echo base_url().'assets/' ?>script/jquery-1.10.2.min.js"></script>
+    <script src="<?php echo base_url().'assets/' ?>script/jquery-1.10.2.min.js"></script>
     <script src="<?php echo base_url().'assets/' ?>script/jquery-migrate-1.2.1.min.js"></script>
     <script src="<?php echo base_url().'assets/' ?>script/jquery-ui.js"></script>
     <script src="<?php echo base_url().'assets/' ?>script/bootstrap.min.js"></script>

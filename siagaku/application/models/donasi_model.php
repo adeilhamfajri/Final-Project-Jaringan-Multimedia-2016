@@ -12,7 +12,8 @@ class donasi_model extends CI_Model{
 	public function getLastDonasi()
 	{
 		$this->db->from('donasi');
-		$this->db->order_by("donasi.id_donasi", "desc");
+		$this->db->join('barang' , 'donasi.id_barang = barang.id_barang');
+		$this->db->order_by("donasi.tanggal_donasi", "desc");
         $this->db->limit(12);
 		$query = $this->db->get();
 		return $query->result();

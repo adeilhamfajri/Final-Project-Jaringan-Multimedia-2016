@@ -198,42 +198,47 @@
                         <div class="panel panel-violet">
                             <div class="panel-heading" align="center">Kelola Lokasi Bencana</div>
                             <div class="panel-body">
+                            <form method="POST" action="<?php echo base_url().'index.php/crud_lokasi/do_insert' ?>" enctype="multipart/form-data">
                                 <table class="table table-hover table-striped">
+                                
                                     <thead>
                                     <tr>
                                         <th>ID Lokasi</th>
                                         <th>Nama Lokasi</th>
                                         <th>Latitude</th>
                                         <th>Longitude</th>
-                                        <th>Bencana</th>
+                                        <th>Deskripsi</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ($data as $temp) { ?>
                                     <tr>
-                                        <td>LB001</td>
-                                        <td>Pidie Aceh</td>
-                                        <td>ffad@fadfdadf1212</td>
-                                        <td>12134fdsfdaffad@</td>
-                                        <td>Gempa Bumi</td>
+                                        <td><?php echo $temp['id_lokasi']; ?></td>
+                                        <td><?php echo $temp['nama_lokasi']; ?></td>
+                                        <td><?php echo $temp['latitude']; ?></td>
+                                        <td><?php echo $temp['longitude']; ?></td>
+                                        <td><?php echo $temp['deskripsi']; ?></td>
                                         <td>
                                             <button>Hapus Data</button>
-                                            <button>Edit</button>
+                                            <a class="btn btn-block btn-info" value="Edit" href="<?php echo base_url()."index.php/crud_lokasi/do_edit/".$temp['id_lokasi']; ?>">Edit</a>
                                         </td>  
                                     </tr>
-                                    
+                                     <?php   } ?>
                                     <tr>
-                                        <td><input type="text"/></td>
-                                        <td><input type="text"/></td>
-                                        <td><input type="text"/></td>
-                                        <td><input type="text"/></td>
                                         <td> </td>
-                                        <td><button class="label label-sm label-success">Tambah</button></td>   
+                                        <td><input type="text" name="nama_lokasi" /></td>
+                                        <td><input type="text" name="latitude" /></td>
+                                        <td><input type="text" name="longitude" /></td>
+                                        <td><input type="text" name="deskripsi" /></td>
+                                        
+                                        <td><button class="label label-sm label-success" type="submit">Tambah</button></td>   
                                     </tr>
                                    
                                    
                                     </tbody>
-
+                               
                                 </table>
+                                </form>
                             </div>
                               
                         </div>

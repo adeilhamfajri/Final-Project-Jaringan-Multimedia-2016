@@ -147,81 +147,13 @@
                   </tr>
                 </thead>
                 <tbody>
+				<?php foreach($dana as $row) { ?>
                   <tr>
-                    <td>31 September 2026</td>
-                    <td>Ade Ilham</td>
-                    <td>5000000</td>
+                    <td><?php echo date_format(date_create($row->tanggal),"d F Y"); ?></td>
+                    <td><?php echo $row->nama_donatur; ?></td>
+                    <td><?php echo $row->nominal; ?></td>
                   </tr>
-                  <tr>
-                    <td>5 Februari 2010</td>
-                    <td>Imam Zarqoni</td>
-                    <td>15000000</td>
-                  </tr>
-                  <tr>
-                    <td>17 Maret 2013</td>
-                    <td>Divi</td>
-                    <td>2250000</td>
-                  </tr>
-                  <tr>
-                    <td>23 Oktober 2015</td>
-                    <td>Divi</td>
-                    <td>7500000</td>
-                  </tr>
-                  <tr>
-                    <td>1 November 2016</td>
-                    <td>Luqman Ahmad</td>
-                    <td>3500000</td>
-                  </tr>
-                  <tr>
-                    <td>31 September 2026</td>
-                    <td>Ade Ilham</td>
-                    <td>5000000</td>
-                  </tr>
-                  <tr>
-                    <td>5 Februari 2010</td>
-                    <td>Imam Zarqoni</td>
-                    <td>15000000</td>
-                  </tr>
-                  <tr>
-                    <td>17 Maret 2013</td>
-                    <td>Divi</td>
-                    <td>2250000</td>
-                  </tr>
-                  <tr>
-                    <td>23 Oktober 2015</td>
-                    <td>Divi</td>
-                    <td>7500000</td>
-                  </tr>
-                  <tr>
-                    <td>1 November 2016</td>
-                    <td>Luqman Ahmad</td>
-                    <td>3500000</td>
-                  </tr>
-                  <tr>
-                    <td>31 September 2026</td>
-                    <td>Ade Ilham</td>
-                    <td>5000000</td>
-                  </tr>
-                  <tr>
-                    <td>5 Februari 2010</td>
-                    <td>Imam Zarqoni</td>
-                    <td>15000000</td>
-                  </tr>
-                  <tr>
-                    <td>17 Maret 2013</td>
-                    <td>Divi</td>
-                    <td>2250000</td>
-                  </tr>
-                  <tr>
-                    <td>23 Oktober 2015</td>
-                    <td>Divi</td>
-                    <td>7500000</td>
-                  </tr>
-                  <tr>
-                    <td>1 November 2016</td>
-                    <td>Luqman Ahmad</td>
-                    <td>3500000</td>
-                  </tr>
+				<?php } ?>
                 </tbody>
               </table>
             </div>
@@ -254,78 +186,14 @@
                   </tr>
                 </thead>
                 <tbody>
+				<?php foreach($donasi as $row) { ?>
                   <tr>
-                    <td>20 Desember 2026</td>
-                    <td>John</td>
-                    <td>Mie Instant</td>
-                    <td>1500</td>
+                    <td><?php echo date_format(date_create($row->tanggal_donasi),"d F Y"); ?></td>
+                    <td><?php echo $row->nama_donatur; ?></td>
+                    <td><?php echo $row->nama_barang; ?></td>
+                    <td><?php echo $row->jumlah_donasi; ?></td>
                   </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Doe</td>
-                    <td>Selimut</td>
-                    <td>25</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Smith</td>
-                    <td>Pakaian</td>
-                    <td>15</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>John</td>
-                    <td>Mie Instant</td>
-                    <td>1500</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Doe</td>
-                    <td>Selimut</td>
-                    <td>25</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Smith</td>
-                    <td>Pakaian</td>
-                    <td>15</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>John</td>
-                    <td>Mie Instant</td>
-                    <td>1500</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Doe</td>
-                    <td>Selimut</td>
-                    <td>25</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Smith</td>
-                    <td>Pakaian</td>
-                    <td>15</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>John</td>
-                    <td>Mie Instant</td>
-                    <td>1500</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Doe</td>
-                    <td>Selimut</td>
-                    <td>25</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Smith</td>
-                    <td>Pakaian</td>
-                    <td>15</td>
-                  </tr>
+				<?php } ?>
                 </tbody>
               </table>
             </div>
@@ -359,79 +227,14 @@
                   </tr>
                 </thead>
                 <tbody>
+				<?php foreach($kebutuhan as $row) { ?>
                   <tr>
-                    <td>20 Desember 2026</td>
-                    <td>Selimut</td>
-                    <td>75</td>
-                    <td>Lokasi A</td>
+                    <td><?php echo date_format(date_create($row->tanggal_permintaan),"d F Y"); ?></td>
+                    <td><?php echo $row->nama_barang; ?></td>
+                    <td><?php echo $row->jumlah_kebutuhan; ?></td>
+                    <td><?php echo $row->nama_lokasi; ?></td>
                   </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Perban</td>
-                    <td>1000</td>
-                    <td>Lokasi B</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Pakaian</td>
-                    <td>100</td>
-                    <td>Lokasi C</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>Selimut</td>
-                    <td>75</td>
-                    <td>Lokasi A</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Perban</td>
-                    <td>1000</td>
-                    <td>Lokasi B</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Pakaian</td>
-                    <td>100</td>
-                    <td>Lokasi C</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>Selimut</td>
-                    <td>75</td>
-                    <td>Lokasi A</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Perban</td>
-                    <td>1000</td>
-                    <td>Lokasi B</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Pakaian</td>
-                    <td>100</td>
-                    <td>Lokasi C</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>Selimut</td>
-                    <td>75</td>
-                    <td>Lokasi A</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Perban</td>
-                    <td>1000</td>
-                    <td>Lokasi B</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Pakaian</td>
-                    <td>100</td>
-                    <td>Lokasi C</td>
-                  </tr>
-                 
+				<?php } ?>
                 </tbody>
               </table>
             </div>
@@ -690,10 +493,17 @@
         lat: -6.933880,
         long: 106.932678
     };
-    var locations = [
-      [location1.info, location1.lat, location1.long, 0],
-      [location2.info, location2.lat, location2.long, 1],
-      [location3.info, location3.lat, location3.long, 2],
+    <?php $i = 0;?>
+	var locations = [
+	<?php foreach($location as $row){ ?>
+	["<?php echo $row['nama_lokasi']; ?><br><?php echo $row['deskripsi']; ?><br><a href=\"<?php echo base_url().'index.php/home/detail_kebutuhan/'.$row['id_lokasi'] ?>\">Cek detail</a>",
+	"<?php echo $row['latitude']; ?>",
+	"<?php echo $row['longitude']; ?>",
+	<?php echo $i; $i++;?>],
+	<?php }?>
+      //[location1.info, <?php echo $lat;?>, <?php echo $long;?>, 0],
+      //[location2.info, location2.lat, location2.long, 1],
+      //[location3.info, location3.lat, location3.long, 2],
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
