@@ -63,12 +63,12 @@ class crud_kebutuhan extends CI_Controller {
 		<?php
 	}
 
-	public function hapus_donasi($id){
-		$this->db->where('id_donasi', $id);
-		$this->db->delete('donasi');
+	public function hapus_kebutuhan($id){
+		$this->db->where('id_kebutuhan', $id);
+		$this->db->delete('kebutuhan');
 		?>
 			<script>
-				location.href = '<?php echo base_url(); ?>index.php/crud_donasibarang/bantuan_materi';
+				location.href = '<?php echo base_url(); ?>index.php/crud_kebutuhan/kebutuhan_korban';
 			</script>
 		<?php
 	}
