@@ -44,8 +44,8 @@
                 </form>
                 <div class="news-update-box hidden-xs"><span class="text-uppercase mrm pull-left text-white">News:</span>
                     <ul id="news-update" class="ticker list-unstyled">
-                        <li>Welcome to KAdmin - Responsive Multi-Style Admin Template</li>
-                        <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</li>
+                        <li>Selamat datang di Siagaku</li>
+                        <li>Disini anda dapat menyampaikan laporan distribusi bencana secara real time dan akurat.</li>
                     </ul>
                 </div>
                 <ul class="nav navbar navbar-top-links navbar-right mbn">
@@ -143,7 +143,7 @@
             </li>
 
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/jenis_bantuan_materi'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_jenisbarang/jenis_bantuan_materi'; ?>">
                     <i class="fa fa-edit fa-fw"><div class="icon-bg bg-yellow"></div></i>
                     <span class="menu-title">Jenis Bantuan Materi</span>
                 </a>
@@ -169,9 +169,9 @@
                             </div>
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
-                        <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                        <li><i class="fa fa-home"></i>&nbsp;<a href="http://localhost/siagaku/siagaku/index.php/relawan">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
                         <li class="hidden"><a href="#">Tables</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="active">Tables</li>
+                        <li class="active">Jenis Bantuan Materi</li>
                     </ol>
                     <div class="clearfix">
                     </div>
@@ -200,30 +200,30 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                     <tr>
-                                        <th>ID Materi</th>
                                         <th>Nama Materi</th>
-                                        <th>Satuan</th>
+                                        <th>Aksi</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>M001</td>
-                                        <td>Selimut</td>
-                                        <td>lembar</td>
-                                        <td>
-                                            <button>Hapus Data</button>
-                                            <button>Edit</button>
-                                        </td>  
+                                        <form method="post" action="<?php echo base_url(); ?>index.php/crud_jenisbarang/tambah_barang">
+                                            <td><input type="text" name="nama_barang" /></td>
+                                            <td><input type="submit" class="btn btn-success" value="Tambah"></td>   
+                                        </form>
+                                        
                                     </tr>
-                                    
-                                    <tr>
-                                        <td><input type="text"/></td>
-                                        <td><input type="text"/></td>
-                                        <td><input type="text"/></td>
-                                        <td><button class="label label-sm label-success">Tambah</button></td>   
-                                    </tr>
-                                   
-                                   
+                                    <?php
+                                        foreach($barang as $baris){
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $baris->nama_barang; ?></td>
+                                            <td>
+                                            <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/crud_jenisbarang/hapus_barang/<?php echo $baris->id_barang; ?>">Hapus Data</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        }
+                                    ?>
                                     </tbody>
 
                                 </table>
