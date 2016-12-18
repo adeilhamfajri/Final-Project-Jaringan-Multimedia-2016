@@ -8,6 +8,15 @@ class kebutuhan_model extends CI_Model{
 		return $query->result();
 	}
 	
+	public function getLastKebutuhan()
+	{
+		$this->db->from('kebutuhan');
+		$this->db->order_by("kebutuhan.id_kebutuhan", "desc");
+        $this->db->limit(12);
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 	public function getKebutuhanById($id)
 	{
 		$this->db->from('kebutuhan');
