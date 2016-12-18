@@ -493,10 +493,17 @@
         lat: -6.933880,
         long: 106.932678
     };
-    var locations = [
-      [location1.info, location1.lat, location1.long, 0],
-      [location2.info, location2.lat, location2.long, 1],
-      [location3.info, location3.lat, location3.long, 2],
+    <?php $i = 0;?>
+	var locations = [
+	<?php foreach($location as $row){ ?>
+	["<?php echo $row['nama_lokasi']; ?><br><?php echo $row['deskripsi']; ?><br><a href=\"<?php echo base_url().'index.php/home/detail_kebutuhan/'.$row['id_lokasi'] ?>\">Cek detail</a>",
+	"<?php echo $row['latitude']; ?>",
+	"<?php echo $row['longitude']; ?>",
+	<?php echo $i; $i++;?>],
+	<?php }?>
+      //[location1.info, <?php echo $lat;?>, <?php echo $long;?>, 0],
+      //[location2.info, location2.lat, location2.long, 1],
+      //[location3.info, location3.lat, location3.long, 2],
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {

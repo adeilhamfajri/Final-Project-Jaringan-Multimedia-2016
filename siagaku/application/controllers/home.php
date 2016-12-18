@@ -29,7 +29,18 @@ class home extends CI_Controller {
 		$this->load->model('kebutuhan_model');
 		$data['kebutuhan'] = $this->kebutuhan_model->getLastKebutuhan();
 		
+		$this->load->model('lokasi_model');
+		$data['location'] = $this->lokasi_model->getAllLocation();
+		
 		$this->load->view('index',$data);
+	}
+	
+	public function detail_kebutuhan($id)
+	{
+		$this->load->model('kebutuhan_model');
+		$data['kebutuhan'] = $this->kebutuhan_model->getKebutuhanByLocation($id);
+		
+		$this->load->view('detail_kebutuhan',$data);
 	}
 
 	public function login()

@@ -25,6 +25,7 @@ class kebutuhan_model extends CI_Model{
 	public function getKebutuhanById($id)
 	{
 		$this->db->from('kebutuhan');
+		$this->db->join('barang' , 'kebutuhan.id_barang = barang.id_barang');
 		$this->db->where('kebutuhan.id_kebutuhan',$id);
 		$query = $this->db->get();
 		return $query->result();
@@ -34,6 +35,7 @@ class kebutuhan_model extends CI_Model{
 	public function getKebutuhanByLocation($location)
 	{
 		$this->db->from('kebutuhan');
+		$this->db->join('barang' , 'kebutuhan.id_barang = barang.id_barang');
 		$this->db->where('kebutuhan.id_lokasi',$location);
 		$query = $this->db->get();
 		return $query->result();
