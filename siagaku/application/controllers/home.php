@@ -22,6 +22,13 @@ class home extends CI_Controller {
 	{
 		$this->load->model('dana_model');
 		$data['dana'] = $this->dana_model->getLastDana();
+		
+		$this->load->model('donasi_model');
+		$data['donasi'] = $this->donasi_model->getLastDonasi();
+		
+		$this->load->model('kebutuhan_model');
+		$data['kebutuhan'] = $this->kebutuhan_model->getLastKebutuhan();
+		
 		$this->load->view('index',$data);
 	}
 

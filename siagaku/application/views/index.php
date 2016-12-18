@@ -149,9 +149,9 @@
                 <tbody>
 				<?php foreach($dana as $row) { ?>
                   <tr>
-                    <td><?php echo date_format(date_create($row->tanggal),"d F Y") ?></td>
-                    <td><?php echo $row->nama_donatur ?></td>
-                    <td><?php echo $row->nominal ?></td>
+                    <td><?php echo date_format(date_create($row->tanggal),"d F Y"); ?></td>
+                    <td><?php echo $row->nama_donatur; ?></td>
+                    <td><?php echo $row->nominal; ?></td>
                   </tr>
 				<?php } ?>
                 </tbody>
@@ -186,78 +186,14 @@
                   </tr>
                 </thead>
                 <tbody>
+				<?php foreach($donasi as $row) { ?>
                   <tr>
-                    <td>20 Desember 2026</td>
-                    <td>John</td>
-                    <td>Mie Instant</td>
-                    <td>1500</td>
+                    <td><?php echo date_format(date_create($row->tanggal_donasi),"d F Y"); ?></td>
+                    <td><?php echo $row->nama_donatur; ?></td>
+                    <td><?php echo $row->nama_barang; ?></td>
+                    <td><?php echo $row->jumlah_donasi; ?></td>
                   </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Doe</td>
-                    <td>Selimut</td>
-                    <td>25</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Smith</td>
-                    <td>Pakaian</td>
-                    <td>15</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>John</td>
-                    <td>Mie Instant</td>
-                    <td>1500</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Doe</td>
-                    <td>Selimut</td>
-                    <td>25</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Smith</td>
-                    <td>Pakaian</td>
-                    <td>15</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>John</td>
-                    <td>Mie Instant</td>
-                    <td>1500</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Doe</td>
-                    <td>Selimut</td>
-                    <td>25</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Smith</td>
-                    <td>Pakaian</td>
-                    <td>15</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>John</td>
-                    <td>Mie Instant</td>
-                    <td>1500</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Doe</td>
-                    <td>Selimut</td>
-                    <td>25</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Smith</td>
-                    <td>Pakaian</td>
-                    <td>15</td>
-                  </tr>
+				<?php } ?>
                 </tbody>
               </table>
             </div>
@@ -291,79 +227,14 @@
                   </tr>
                 </thead>
                 <tbody>
+				<?php foreach($kebutuhan as $row) { ?>
                   <tr>
-                    <td>20 Desember 2026</td>
-                    <td>Selimut</td>
-                    <td>75</td>
-                    <td>Lokasi A</td>
+                    <td><?php echo date_format(date_create($row->tanggal_permintaan),"d F Y"); ?></td>
+                    <td><?php echo $row->nama_barang; ?></td>
+                    <td><?php echo $row->jumlah_kebutuhan; ?></td>
+                    <td><?php echo $row->nama_lokasi; ?></td>
                   </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Perban</td>
-                    <td>1000</td>
-                    <td>Lokasi B</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Pakaian</td>
-                    <td>100</td>
-                    <td>Lokasi C</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>Selimut</td>
-                    <td>75</td>
-                    <td>Lokasi A</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Perban</td>
-                    <td>1000</td>
-                    <td>Lokasi B</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Pakaian</td>
-                    <td>100</td>
-                    <td>Lokasi C</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>Selimut</td>
-                    <td>75</td>
-                    <td>Lokasi A</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Perban</td>
-                    <td>1000</td>
-                    <td>Lokasi B</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Pakaian</td>
-                    <td>100</td>
-                    <td>Lokasi C</td>
-                  </tr>
-                  <tr>
-                    <td>20 Desember 2026</td>
-                    <td>Selimut</td>
-                    <td>75</td>
-                    <td>Lokasi A</td>
-                  </tr>
-                  <tr>
-                    <td>13 Januari 2016</td>
-                    <td>Perban</td>
-                    <td>1000</td>
-                    <td>Lokasi B</td>
-                  </tr>
-                  <tr>
-                    <td>15 Agustus 2016</td>
-                    <td>Pakaian</td>
-                    <td>100</td>
-                    <td>Lokasi C</td>
-                  </tr>
-                 
+				<?php } ?>
                 </tbody>
               </table>
             </div>
