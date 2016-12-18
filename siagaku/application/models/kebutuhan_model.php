@@ -1,6 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class kebutuhan_model extends CI_Model{
 
+	//semua kebutuhan
 	public function getAllKebutuhan()
 	{
 		$this->db->from('kebutuhan');
@@ -8,6 +9,7 @@ class kebutuhan_model extends CI_Model{
 		return $query->result();
 	}
 	
+	//12 kebutuhan terakhir untuk ditampilkan di home
 	public function getLastKebutuhan()
 	{
 		$this->db->from('kebutuhan');
@@ -17,6 +19,7 @@ class kebutuhan_model extends CI_Model{
 		return $query->result();
 	}
 	
+	//mendapatkan kebutuhan berdasarkan id_kebutuhan
 	public function getKebutuhanById($id)
 	{
 		$this->db->from('kebutuhan');
@@ -25,6 +28,7 @@ class kebutuhan_model extends CI_Model{
 		return $query->result();
 	}
 	
+	//mendapatkan kebutuhan berdasarkan id_lokasi
 	public function getKebutuhanByLocation($location)
 	{
 		$this->db->from('kebutuhan');
@@ -33,6 +37,7 @@ class kebutuhan_model extends CI_Model{
 		return $query->result();
 	}
 	
+	//insert kebutuhan baru
 	public function insertKebutuhan($KebutuhanData)
 	{
 		$this->db->insert('kebutuhan', $KebutuhanData);
