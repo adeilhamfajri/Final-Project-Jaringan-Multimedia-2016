@@ -118,7 +118,7 @@
         </div> -->
     </div>
     <script async defer 
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8wgmAbnuvLLjtEcBC6fIeFkfYbFhXi5Q&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8wgmAbnuvLLjtEcBC6fIeFkfYbFhXi5Q&callback=initMap">
     </script>
 <!-- </section> -->
 
@@ -433,7 +433,7 @@
 
                             <div class="col-sm-6">
                                 <input type="text" name="TrialForm[phone]" id="trial_phone" class="form-control" placeholder="Phone Number" required>
-                            </div>
+                             </div>
                         </div>
 
                         <p><i class="fa-info-circle"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid iure magnam, minima placeat possimus provident quaerat repellat.</p>
@@ -445,7 +445,7 @@
     </div>
 </div>
 
-<script src="<?php echo base_url().'assets/' ?>js0/jquery.min.js"></script>
+<!-- <script src="<?php echo base_url().'assets/' ?>js0/jquery.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/bootstrap.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/bootstrap-slider.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/jquery.circliful.min.js"></script>
@@ -453,7 +453,7 @@
 <script src="<?php echo base_url().'assets/' ?>js0/jquery.easing.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/jquery.flexslider.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/jquery.mixitup.min.js"></script>
-<script src="<?php echo base_url().'assets/' ?>jquery.validate.min.js"></script>
+<script src="<?php echo base_url().'assets/' ?>js0/jquery.validate.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/jquery.vide.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/jquery.waypoints.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/pace.min.js"></script>
@@ -461,7 +461,7 @@
 <script src="<?php echo base_url().'assets/' ?>js0/plugins/jquery.animatebar.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/plugins/jquery.videoplayer.min.js"></script>
 <script src="<?php echo base_url().'assets/' ?>js0/vendor/modernizr-2.8.3.min.js"></script>
-<script src="<?php echo base_url().'assets/' ?>js0/main.js"></script>
+<script src="<?php echo base_url().'assets/' ?>js0/main.js"></script> -->
 </body>
 </html>
 
@@ -497,25 +497,24 @@
 	var locations = [
 	<?php foreach($location as $row){ ?>
 	["<?php echo $row['nama_lokasi']; ?><br><?php echo $row['deskripsi']; ?><br><a href=\"<?php echo base_url().'index.php/home/detail_kebutuhan/'.$row['id_lokasi'] ?>\">Cek detail</a>",
-	"<?php echo $row['latitude']; ?>",
-	"<?php echo $row['longitude']; ?>",
+	<?php echo $row['latitude']; ?>,
+	<?php echo $row['longitude']; ?>,
 	<?php echo $i; $i++;?>],
 	<?php }?>
-      //[location1.info, <?php echo $lat;?>, <?php echo $long;?>, 0],
       //[location2.info, location2.lat, location2.long, 1],
       //[location3.info, location3.lat, location3.long, 2],
     ];
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 5,
-        center: new google.maps.LatLng(-2.037170, 115.598145),
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-    var locations = [
-      [location1.info, location1.lat, location1.long, 0],
-      [location2.info, location2.lat, location2.long, 1],
-      [location3.info, location3.lat, location3.long, 2],
-    ];
+    // var map = new google.maps.Map(document.getElementById('map'), {
+    //     zoom: 5,
+    //     center: new google.maps.LatLng(-2.037170, 115.598145),
+    //     mapTypeId: google.maps.MapTypeId.ROADMAP
+    // });
+    // var locations = [
+    //   [location1.info, location1.lat, location1.long, 0],
+    //   [location2.info, location2.lat, location2.long, 1],
+    //   [location3.info, location3.lat, location3.long, 2],
+    // ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 5,
