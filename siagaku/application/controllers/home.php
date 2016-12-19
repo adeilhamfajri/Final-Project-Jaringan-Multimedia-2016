@@ -37,6 +37,9 @@ class home extends CI_Controller {
 	
 	public function detail_kebutuhan($id)
 	{
+		$this->load->model('lokasi_model');
+		$data['lokasi'] = $this->lokasi_model->getLocationById($id);
+		
 		$this->load->model('kebutuhan_model');
 		$data['kebutuhan'] = $this->kebutuhan_model->getKebutuhanByLocation($id);
 		
