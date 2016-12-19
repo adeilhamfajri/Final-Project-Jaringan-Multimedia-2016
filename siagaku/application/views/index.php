@@ -356,27 +356,27 @@
                     </ul>
                 </div>
                 <div class="col col-sm-4">
-                    <h4 class="bold">Your Office</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur elit. Blanditiis commodi expedita, odit officiis quae qui quo?</p>
+                    <h4 class="bold">Kantor Kami</h4>
+                    <p>Jika ada pertanyaan terkait penyaluran bantuan korban bencana, dapat langsung menghubungi kami melalui:</p>
                     <ul class="list-unstyled list-icon list-icon-md">
                         <li>
                             <i class="fa-map-marker"></i>
-                            <span>123 Street St, Your City, YC Your Country</span>
+                            <span>Jalan Teknik Kimia, Sukolilo, Surabaya</span>
                         </li>
                         <li>
                             <i class="fa-phone"></i>
-                            <span>(123) 456-7890</span>
+                            <span>(031) 456-789</span>
                         </li>
                         <li>
                             <i class="fa-envelope-o"></i>
-                            <span><a href="mailto:yourmail@domain.com">yourmail@domain.com</a></span>
+                            <span><a href="mailto:yourmail@domain.com">siagaku@siagaku.com</a></span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="col col-sm-4">
-                    <h4 class="bold">Subscribe to our newsletter</h4>
-                    <p>By registering with us, you will receive right in your inbox all new features and updates. <span class="bold">Subscribe now!</span></p>
+                    <h4 class="bold">Subscribe ke newsletter kami</h4>
+                    <p>Dengan cara mendaftarkan diri pada kami, Anda akan mendapatkan kabar terkini perihal informasi bencana alam. <span class="bold">Subscribe now!</span></p>
 
                     <form action="srv/subscribe.php" class="form form-subscribe" method="post" data-msg="this">
                         <div class="input-group">
