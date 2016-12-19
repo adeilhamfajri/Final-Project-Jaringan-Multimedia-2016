@@ -15,6 +15,7 @@ class Crud_lokasi extends CI_Controller {
 
     public function get_location(){
     	$data = $this->lokasi_model->getAllLocation();
+		$this->load->view('relawan/header');
     	$this->load->view('relawan/lokasi_bencana', array('data' => $data));
     }
 
@@ -49,7 +50,7 @@ class Crud_lokasi extends CI_Controller {
 			"deskripsi" => $lokasi[0]['deskripsi'],
 			);
 		
-        
+        $this->load->view('relawan/header');
         $this->load->view("relawan/form_editlokasi", $data);
     }
 	

@@ -15,6 +15,7 @@ class Crud_danamasuk extends CI_Controller {
 
 	public function get_danamasuk(){
     	$data = $this->dana_model->getAllDana();
+		$this->load->view('relawan/header');
     	$this->load->view('relawan/dana_masuk', array('data' => $data));
     }
 
@@ -44,7 +45,7 @@ class Crud_danamasuk extends CI_Controller {
 			"nominal" => $dana[0]['nominal'], 
 			"nama_donatur" => $dana[0]['nama_donatur'],
 			);
-
+		$this->load->view('relawan/header');
         $this->load->view("relawan/form_editdanamasuk", $data);
         }
 
