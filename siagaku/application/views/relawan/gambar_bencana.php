@@ -37,14 +37,17 @@
                                         <thead>  
                                             <tr>
                                                 <th style="width:10%;">Gambar Bencana</th>
+                                                <th></th>
                                                 <th style="width:10%;">Deskripsi Gambar</th>
-                                                <th style="width:10%;">Upload Gambar</th>
+
+
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             <tr>
                                                 <td><img height="100" width="250" src="" /></td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 
@@ -55,10 +58,13 @@
                                             </tr>
 
                                             <tr>
+                                                <td><img height="100" width="250" src="" /></td>
                                                 <td><input type="hidden" name="img_name" value=""></td>
                                                 <td><input type="text" name=""></td>
-                                                <td><input style="width: 100%; padding: 0px; margin: 0px;" type="file" value="" name="userfile" id="userfile" onChange="readURL(this);"></td>
-                                                <td><button data-loading-text="Loading..." style="width: 100%; padding: 0px; margin: 0px;" type="submit" name="submit" class="btn btn-primary">Submit</button></td>   
+                                                <td></td>
+                                                <td>
+                                                    <input style="width: 100%; padding: 0px; margin: 0px;" type="file" value="" name="userfile" id="userfile" onChange="readURL(this);">
+                                                <button data-loading-text="Loading..." style="width: 100%; padding: 0px; margin: 0px;" type="submit" name="submit" class="btn btn-primary">Submit</button></td>   
                                             </tr>
                                         </tbody>                           
                                     </table>
