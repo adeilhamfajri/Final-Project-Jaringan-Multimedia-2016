@@ -115,7 +115,7 @@
         <ul id="side-menu" class="nav">
             <div class="clearfix"></div>
             <li> 
-                <a href="<?php echo base_url().'index.php/relawan/lokasi_bencana'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_lokasi/get_location'; ?>">
                     <i class="fa fa-send-o fa-fw"><div class="icon-bg bg-green"></div></i>
                     <span class="menu-title">Lokasi Bencana</span>
                 </a>     
@@ -129,7 +129,7 @@
             </li>
 
             <li>
-                <a href="<?php echo base_url().'index.php/relawan/dana_masuk'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_danamasuk/get_danamasuk'; ?>">
                     <i class="fa fa-desktop fa-fw"><div class="icon-bg bg-blue"></div></i>
                     <span class="menu-title">Dana Masuk</span>
                 </a>
