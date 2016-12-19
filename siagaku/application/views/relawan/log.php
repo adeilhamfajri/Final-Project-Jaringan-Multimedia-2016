@@ -38,36 +38,40 @@
                         <div class="panel panel-violet">
                             <div class="panel-heading" align="center">Report Penggunaan Donasi</div>
                             <div class="panel-body">
+                            <form method="POST" action="<?php echo base_url().'index.php/crud_log/insert' ?>" enctype="multipart/form-data">
                                 <table class="table table-hover table-striped">
                                     <thead>
                                     <tr>
-                                        <th>ID Event</th>
-                                        <th>ID Lokasi</th>
-                                        <th>Pengadaan</th>
-                                        <th>Jumlah</th>
+                                        <th>ID log</th>
                                         <th>Tanggal</th>
+                                        <th>ID Barang</th>
+                                        <th>Jumlah</th>
+                                        <th>Harga (IDR)</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>L001</td>
-                                        <td>LB001</td>
-                                        <td>Selimut</td>
-                                        <td>5</td>
-                                        <td>11 Desember 2016</td>                         
+                                        <td></td>
+                                        <td></td>
+                                        <td><input type="text" name="id" /></td>
+                                        <td><input type="text" name="jumlah" /></td>
+                                        <td><input type="text" name="harga" /></td>
+                                        <td><button class="btn btn-success" type="submit">Tambah</button></td>   
                                     </tr>
                                     
-                                     <tr>
-                                        <td>L002</td>
-                                        <td>LB002</td>
-                                        <td>Indomie</td>
-                                        <td>50</td>
-                                        <td>12 Desember 2016</td>                         
+                                    <?php foreach($records as $row){?>
+                                    <tr>
+                                        <td><?php echo $row['id_log']; ?></td>
+                                        <td><?php echo $row['tanggal']; ?></td>
+                                        <td><?php echo $row['id_barang']; ?></td>
+                                        <td><?php echo $row['jumlah']; ?></td>
+                                        <td><?php echo $row['harga']; ?></td>
+                                    <?php } ?>
                                     </tr>
-                                   
                                     </tbody>
 
                                 </table>
+                            </form>
                             </div>
                               
                         </div>
