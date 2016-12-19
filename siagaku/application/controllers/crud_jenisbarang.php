@@ -12,6 +12,7 @@ class crud_jenisbarang extends CI_Controller {
 	{
 		$this->load->model('barang_model');
 		$data['barang'] = $this->barang_model->getAllBarang();
+		$this->load->view('relawan/header');
 		$this->load->view('relawan/jenis_bantuan_materi', $data);
 	}
 

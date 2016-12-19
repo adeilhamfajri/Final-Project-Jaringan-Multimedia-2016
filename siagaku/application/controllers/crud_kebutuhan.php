@@ -16,6 +16,7 @@ class crud_kebutuhan extends CI_Controller {
 		$data['barang'] = $this->barang_model->getAllBarang();
 		$data['lokasi'] = $this->lokasi_model->getAllLocation();
 		$data['kebutuhan'] = $this->kebutuhan_model->getAllKebutuhan();
+		$this->load->view('relawan/header');
 		$this->load->view('relawan/kebutuhan_korban', $data);
 	}
 
@@ -44,6 +45,7 @@ class crud_kebutuhan extends CI_Controller {
 		$data['lokasi'] = $this->lokasi_model->getAllLocation();
 		$data['kebutuhan'] = $this->kebutuhan_model->getAllKebutuhan();
 		$data['cek'] = $id;
+		$this->load->view('relawan/header');
 		$this->load->view('relawan/kebutuhan_korban', $data);
 	}
 

@@ -14,6 +14,7 @@ class crud_donasibarang extends CI_Controller {
 		$this->load->model('donasi_model');
 		$data['barang'] = $this->barang_model->getAllBarang();
 		$data['donasi'] = $this->donasi_model->getAllDonasi();
+		$this->load->view('relawan/header');
 		$this->load->view('relawan/bantuan_materi', $data);
 	}
 
@@ -40,6 +41,7 @@ class crud_donasibarang extends CI_Controller {
 		$data['barang'] = $this->barang_model->getAllBarang();
 		$data['donasi'] = $this->donasi_model->getAllDonasi();
 		$data['cek'] = $id;
+		$this->load->view('relawan/header');
 		$this->load->view('relawan/bantuan_materi', $data);
 	}
 
