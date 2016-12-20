@@ -241,6 +241,47 @@
         </div>
     </div>
 </section>
+
+<section id="pengeluaran" class="">
+    <div class="container">
+        <div class="row"><br><br></div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="section-heading">
+                    <h2 class="line left"><span class="bold">Daftar Pengeluaran</span></h2>
+                    <p class="subtitle">Lihat daftar pengeluaran untuk pembelian logistik bantuan.</p>
+                </div>
+
+                <p><span class="bold">Kami</span> memiliki relawan terpercaya yang selalu memberikan informasi kebutuhan korban bencara secara actual.</p>
+                
+            </div>
+
+            <div class="col-md-7 screen-show">
+                <table class="table table-condensed table-hover">
+                <thead>
+                  <tr>
+                    <th>Tanggal Pengeluaran</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                  </tr>
+                </thead>
+                <tbody>
+				<?php foreach($pengeluaran as $row) { ?>
+                  <tr>
+                    <td><?php echo date_format(date_create($row->tanggal),"d F Y"); ?></td>
+                    <td><?php echo $row->nama_barang; ?></td>
+                    <td><?php echo $row->jumlah; ?></td>
+                    <td><?php echo $row->harga; ?></td>
+                  </tr>
+				<?php } ?>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="kondisiterkini" class="">
     <div class="container">
         <div class="row">
