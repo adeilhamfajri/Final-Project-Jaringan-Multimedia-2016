@@ -70,6 +70,7 @@
             <li><a href="#donasibarang"><i class="fa-mobile"></i>Donasi Barang</a></li>
             <!-- pricing = Kebutuhan -->
             <li><a href="#kebutuhan"><i class="fa-usd"></i>Kebutuhan</a></li>
+            <li><a href="#pengeluaran"><i class="fa-usd"></i>Pengeluaran</a></li>
             <li><a href="#kondisiterkini"><i class="fa-usd"></i>Kondisi Terkini</a></li>
          <!--    <li><a href="login.html">Login</a></li> -->
         </ul>
@@ -130,7 +131,15 @@
             <div class="col-md-5">
                 <div class="section-heading">
                     <h2 class="line left"><span class="bold">Dana Terkumpul</span></h2>
-                    <p class="subtitle">Lihat donasi dana yang masuk.</p>
+                    <p class="subtitle">
+                        Total Dana =
+                        <?php
+                            $query = $this->db->query("select * from total_dana");
+                            foreach ($query->result() as $key) {
+                                echo $key->total_dana;
+                            }
+                        ?>
+                    </p>
                 </div>
 
                 <p><span class="bold">Kami</span> merancang siagaku sebagai platform penanggulangan bencana yang transparan. Anda dapat kapan saja melihat seluruh donasi yang masuk.</p>
@@ -241,6 +250,55 @@
         </div>
     </div>
 </section>
+
+<section id="pengeluaran" class="">
+    <div class="container">
+        <div class="row"><br><br></div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="section-heading">
+                    <h2 class="line left"><span class="bold">Pengeluaran</span></h2>
+                    <p class="subtitle">
+                        Total Dana =
+                        <?php
+                            $query = $this->db->query("select * from total_dana");
+                            foreach ($query->result() as $key) {
+                                echo $key->total_dana;
+                            }
+                        ?>
+                    </p>
+                </div>
+
+                <p><span class="bold">Kami</span> memiliki relawan terpercaya yang selalu memberikan informasi kebutuhan korban bencara secara actual.</p>
+                
+            </div>
+
+            <div class="col-md-7 screen-show">
+                <table class="table table-condensed table-hover">
+                <thead>
+                  <tr>
+                    <th>Tanggal Pengeluaran</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                  </tr>
+                </thead>
+                <tbody>
+				<?php foreach($pengeluaran as $row) { ?>
+                  <tr>
+                    <td><?php echo date_format(date_create($row->tanggal),"d F Y"); ?></td>
+                    <td><?php echo $row->nama_barang; ?></td>
+                    <td><?php echo $row->jumlah; ?></td>
+                    <td><?php echo $row->harga; ?></td>
+                  </tr>
+				<?php } ?>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="kondisiterkini" class="">
     <div class="container">
         <div class="row">
@@ -250,27 +308,18 @@
             </div>
         </div>
         <div class="row">
+		<?php foreach($gambar as $row) { ?>
             <div class="col-md-6">
               <div class="thumbnail">
-                <a href="<?php echo base_url().'assets/' ?>img/disaster-pict-1.jpg" target="_blank">
-                  <img src="<?php echo base_url().'assets/' ?>img/disaster-pict-1.jpg" alt="Disaster Picture" style="width:100%">
-                  <div class="caption">
-                    <p><span class="bold">India</span>, Tue 01-01-2009 06:00:25<br>Kondisi terkini evakuasi korban banjir bandang.</p>
+                <a href="<?php echo base_url(); ?>/assets/img/bencana/<?php echo $row->nama_gambar; ?>" target="_blank">
+                  <img style="height:300px; width:900px;" src="<?php echo base_url(); ?>/assets/img/bencana/<?php echo $row->nama_gambar; ?>">
+                  <div class="caption" style="height:150px">
+                    <p><?php echo $row->tanggal_gambar; ?><br><?php echo $row->deskripsi_gambar; ?></p>
                   </div>
                 </a>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="thumbnail">
-                <a href="<?php echo base_url().'assets/' ?>img/disaster-pict-2.jpg" target="_blank">
-                  <img src="<?php echo base_url().'assets/' ?>img/disaster-pict-2.jpg" alt="Disaster Picture" style="width:100%">
-                  <div class="caption">
-                    <p><span class="bold">Filipina</span>, Mon 18-02-2007 08:02:34<br>Kondisi terkini setelah gempa bumi berakhir.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-
+		<?php } ?>
         </div>
     </div>
 </section>

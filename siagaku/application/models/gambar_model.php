@@ -11,8 +11,17 @@ class gambar_model extends CI_Model{
 
     public function getAllImage()
     {
-      $viewimage=$this->db->query("SELECT * from gambar order by id_gambar");
+      $viewimage=$this->db->query("SELECT * from gambar order by tanggal_gambar");
       return $viewimage->result_array();
+    }
+	
+	public function getLastImage()
+    {
+		$this->db->from('gambar');
+		$this->db->order_by("gambar.tanggal_gambar", "desc");
+        $this->db->limit(4);
+		$query = $this->db->get();
+		return $query->result();
     }
 
     public function addDataImage($data_tabel){

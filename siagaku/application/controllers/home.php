@@ -32,6 +32,12 @@ class home extends CI_Controller {
 		$this->load->model('lokasi_model');
 		$data['location'] = $this->lokasi_model->getAllLocation();
 		
+		$this->load->model('log_model');
+		$data['pengeluaran'] = $this->log_model->getLastLog();
+		
+		$this->load->model('gambar_model');
+		$data['gambar'] = $this->gambar_model->getLastImage();
+		
 		$this->load->view('index',$data);
 	}
 	

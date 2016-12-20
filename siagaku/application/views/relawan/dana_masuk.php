@@ -36,7 +36,15 @@
                     <br/><br/><br/>
                     <div class="col-lg-12">
                         <div class="panel panel-violet">
-                            <div class="panel-heading" align="center">Kelola Donasi Dana</div>
+                            <div class="panel-heading" align="center">
+                                Total Dana =
+                                <?php
+                                    $query = $this->db->query("select * from total_dana");
+                                    foreach ($query->result() as $key) {
+                                        echo $key->total_dana;
+                                    }
+                                ?>
+                            </div>
                             <div class="panel-body">
                             <form method="POST" action="<?php echo base_url().'index.php/crud_danamasuk/do_insert' ?>" enctype="multipart/form-data">
                                 <table class="table table-hover table-striped">
