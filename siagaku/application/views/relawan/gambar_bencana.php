@@ -64,13 +64,14 @@
                                                 <td><input type="text" name="deskripsi_gambar"></td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="width: 100%; padding: 0px; margin: 0px;" type="file" value="" name="userfile" id="userfile" onChange="readURL(this);">
+                                                    <input style="width: 100%; padding: 0px; margin: 0px;" type="file" value="" name="userfile">
                                                 <button data-loading-text="Loading..." style="width: 100%; padding: 0px; margin: 0px;" type="submit" name="submit" class="btn btn-primary">Submit</button></td>   
                                             </tr>
                                         </tbody>                           
                                     </table>
 
                                     </form>
+                                    <?php echo $error; ?>
                                 </div>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class donasi_model extends CI_Model{
+class gambar_model extends CI_Model{
 
 	function __construct()
     {

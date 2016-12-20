@@ -6,7 +6,7 @@ class crud_gambar extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model('dana_model');
+        $this->load->model('gambar_model');
         $this->load->helper('url');
     }
 
@@ -22,23 +22,25 @@ class crud_gambar extends CI_Controller {
     }
 
     public function do_addimage(){
-        $deskripsi_gambar = $_POST['deskripsi_gambar'];
-        $tanggal = date("y-m-d");
+        // $deskripsi_gambar = $_POST['deskripsi_gambar'];
+        // $tanggal_gambar = date("y-m-d");
+        $path = "././assets/img/bencana/";
         
-        $config['upload_path']          = './assets/img/bencana';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100;
-        $config['max_width']            = 1024;
-        $config['max_height']           = 768;
+        $config['upload_path']          = '$path';
+        $config['allowed_types']        = 'gif|jpg|jpeg|png';
 
         $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+
 
         if ( ! $this->upload->do_upload('userfile'))
         {
                 $error = array('error' => $this->upload->display_errors());
 
-                // $this->load->view('upload_form', $error);
-                echo $error;
+               $this->load->view('relawan/gambar_bencana', $error);
+
+                
         }
         else
         {
@@ -46,13 +48,13 @@ class crud_gambar extends CI_Controller {
 
         }
 
-        $data_insert =  array(
-			'deskripsi_gambar' => $deskripsi_gambar,
-			'tanggal_gambar' => $tanggal_gambar,
+   //      $data_insert =  array(
+			// 'deskripsi_gambar' => $deskripsi_gambar,
+			// 'tanggal_gambar' => $tanggal_gambar,
 
-			);
+			// );
 
-		$res = $this->gambar_model->addDataImage($data_insert);
+	//	$res = $this->gambar_model->addDataImage($data_insert);
 
 
     }
