@@ -23,6 +23,7 @@ class crud_gambar extends CI_Controller {
 
     public function do_addimage(){
         $deskripsi_gambar = $_POST['deskripsi_gambar'];
+        $tanggal = date("y-m-d");
         
         $config['upload_path']          = './assets/img/bencana';
         $config['allowed_types']        = 'gif|jpg|png';
@@ -44,6 +45,16 @@ class crud_gambar extends CI_Controller {
                 $data = array('upload_data' => $this->upload->data());
 
         }
+
+        $data_insert =  array(
+			'deskripsi_gambar' => $deskripsi_gambar,
+			'tanggal_gambar' => $tanggal_gambar,
+
+			);
+
+		$res = $this->gambar_model->addDataImage($data_insert);
+
+
     }
     
 

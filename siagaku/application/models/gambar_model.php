@@ -15,8 +15,8 @@ class donasi_model extends CI_Model{
       return $viewimage->result_array();
     }
 
-    public function addImage($nama_tabel, $data_tabel){
-        $res = $this->db->insert($nama_tabel, $data_tabel);
+    public function addDataImage($data_tabel){
+        $res = $this->db->insert('gambar', $data_tabel);
         return $res;
     }
 
