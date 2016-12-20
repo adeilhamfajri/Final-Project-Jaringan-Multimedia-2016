@@ -22,8 +22,8 @@ class crud_gambar extends CI_Controller {
     }
 
     public function do_addimage(){
-         // $deskripsi_gambar = $_POST['deskripsi_gambar'];
-         // $tanggal_gambar = date("y-m-d");
+         $deskripsi_gambar = $_POST['deskripsi_gambar'];
+         $tanggal_gambar = date("y-m-d");
       
 
       // var_dump($_POST);
@@ -40,15 +40,16 @@ class crud_gambar extends CI_Controller {
 			
 			if($check !== false) {
 			//	echo "File is an image - " . $check["mime"] . ".";
-				// $data_insert =  array(
-			 // 	'deskripsi_gambar' => $deskripsi_gambar,
-			 // 	'tanggal_gambar' => $tanggal_gambar,
+				$data_insert =  array(
+			 	'deskripsi_gambar' => $deskripsi_gambar,
+                'nama_gambar' => $_FILES["fileToUpload"]["name"],
+			 	'tanggal_gambar' => $tanggal_gambar,
 
-			 // );
+			 );
 
-				// $res = $this->gambar_model->addDataImage($data_insert);
-				// echo "berhasil";
-				echo "berhasil";
+				$res = $this->gambar_model->addDataImage($data_insert);
+				 echo $_FILES["fileToUpload"]["name"];
+				
 				$uploadOk = 1;
 			} 
 
