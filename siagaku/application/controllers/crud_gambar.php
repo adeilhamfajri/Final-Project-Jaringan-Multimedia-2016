@@ -23,7 +23,7 @@ class crud_gambar extends CI_Controller {
 
     public function do_addimage(){
          $deskripsi_gambar = $_POST['deskripsi_gambar'];
-         $tanggal_gambar = date("y-m-d");
+         $tanggal_gambar = date("Y-m-d H:i:s");
       
 
       // var_dump($_POST);
