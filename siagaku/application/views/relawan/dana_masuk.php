@@ -42,33 +42,30 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                     <tr>
-                                        <th>ID Donasi</th>
                                         <th>Nominal</th>
                                         <th>Nama Donatur</th>
                                         <th>Tanggal Donasi</th>
+                                        <th>Aksi</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <tr>
+                                        <td><input type="text" name="nominal" /></td>
+                                        <td><input type="text" name="nama_donatur" /></td>
+                                        <td><?php echo date('Y-m-d'); ?></td>
+                                        <td><button class="label label-sm label-success" type="submit">Tambah</button></td>   
+                                    </tr>
                                     <?php foreach ($data as $temp) { ?>
                                     <tr>
-                                        <td><?php echo $temp['id_dana']; ?></td>
                                         <td><?php echo $temp['nominal']; ?></td>
                                         <td><?php echo $temp['nama_donatur']; ?></td>
                                         <td><?php echo $temp['tanggal']; ?></td>
                                         <td>
-                                            <button>Hapus Data</button>
-                                            <a class="btn btn-block btn-info" value="Edit" href="<?php echo base_url()."index.php/crud_danamasuk/do_edit/".$temp['id_dana']; ?>">Edit</a>
+                                            <a class="btn btn-warning" value="Edit" href="<?php echo base_url()."index.php/crud_danamasuk/do_edit/".$temp['id_dana']; ?>">Edit</a>&nbsp;
+                                            <a class="btn btn-danger" value="Edit" href="<?php echo base_url()."index.php/crud_danamasuk/do_edit/".$temp['id_dana']; ?>">Hapus</a>
                                         </td>  
                                     </tr>
                                     <?php   } ?>
-                                    <tr>
-                                        <td> </td>
-                                        <td><input type="text" name="nominal" /></td>
-                                        <td><input type="text" name="nama_donatur" /></td>
-                                        <td><button class="label label-sm label-success" type="submit">Tambah</button></td>   
-                                    </tr>
-                                   
-                                   
                                     </tbody>
 
                                 </table>

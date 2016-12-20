@@ -33,7 +33,12 @@ class Crud_danamasuk extends CI_Controller {
 			);
 
 		$res = $this->dana_model->insertDana($data_insert);
-		
+		$this->db->query('UPDATE total_dana SET total_dana = (SELECT SUM(nominal) FROM dana)');
+		?>
+			<script>
+				location.href = '<?php echo base_url(); ?>index.php/crud_danamasuk/index';
+			</script>
+		<?php
 	}
 
 	public function do_edit($id_dana){
