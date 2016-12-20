@@ -133,13 +133,21 @@
                                                                 <?php
                                                                 foreach ($barang as $key) {
                                                                     if ($key->id_barang == $baris->id_barang) {
+																		$this->db->query('UPDATE kebutuhan SET jumlah_terpenuhi = (SELECT COALESCE(sum(jumlah), 0) FROM LOG WHERE id_barang=kebutuhan.`id_barang`)+(SELECT COALESCE(sum(jumlah_donasi), 0) FROM donasi WHERE id_barang=kebutuhan.`id_barang`) where id_barang='.$key->id_barang);
                                                                         echo $key->nama_barang;
                                                                     }
                                                                 }
                                                                 ?>
                                                             </td>
                                                             <td><?php echo $baris->jumlah_kebutuhan; ?></td>
-                                                            <td><?php echo $baris->jumlah_terpenuhi; ?></td>
+                                                            <td>
+																<?php
+																	if($baris->jumlah_terpenuhi==NULL)
+																		echo 0;
+																	else
+																		echo $baris->jumlah_terpenuhi;
+																?>
+															</td>
                                                             <td><?php echo $baris->tanggal_permintaan; ?></td>
                                                             <td>
                                                             <a class="btn btn-warning" href="<?php echo base_url(); ?>index.php/crud_kebutuhan/show_editkebutuhan/<?php echo $baris->id_kebutuhan; ?>">Edit</a>&nbsp;

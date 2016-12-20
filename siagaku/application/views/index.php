@@ -231,7 +231,8 @@
                   <tr>
                     <th>Tanggal Permintaan</th>
                     <th>Jenis Kebutuhan</th>
-                    <th>Jumlah</th>
+                    <th>Jumlah Dibutuhkan</th>
+					<th>Jumlah Terpenuhi</th>
                     <th>Lokasi</th>
                   </tr>
                 </thead>
@@ -241,6 +242,7 @@
                     <td><?php echo date_format(date_create($row->tanggal_permintaan),"d F Y"); ?></td>
                     <td><?php echo $row->nama_barang; ?></td>
                     <td><?php echo $row->jumlah_kebutuhan; ?></td>
+					<td><?php echo $row->jumlah_terpenuhi; ?></td>
                     <td><?php echo $row->nama_lokasi; ?></td>
                   </tr>
 				<?php } ?>
