@@ -31,7 +31,7 @@
                         <div class="panel panel-violet">
                             <div class="panel-heading" align="center">Kelola Donasi Dana</div>
                                 <div class="panel-body">
-                                    <form method="POST" action="<?php echo base_url().'index.php/crud_danamasuk/do_insert' ?>" enctype="multipart/form-data">
+                                    <form method="POST" action="<?php echo base_url().'index.php/crud_danamasuk/do_addimage' ?>" enctype="multipart/form-data">
 
                                     <table class="table table-hover">
                                         <thead>  
@@ -39,6 +39,7 @@
                                                 <th style="width:10%;">Gambar Bencana</th>
                                                 <th></th>
                                                 <th style="width:10%;">Deskripsi Gambar</th>
+                                                <th>Tanggal</th>
 
 
                                             </tr>
@@ -59,8 +60,8 @@
 
                                             <tr>
                                                 <td><img height="100" width="250" src="" /></td>
-                                                <td><input type="hidden" name="img_name" value=""></td>
-                                                <td><input type="text" name=""></td>
+                                                <td></td>
+                                                <td><input type="text" name="deskripsi_gambar"></td>
                                                 <td></td>
                                                 <td>
                                                     <input style="width: 100%; padding: 0px; margin: 0px;" type="file" value="" name="userfile" id="userfile" onChange="readURL(this);">

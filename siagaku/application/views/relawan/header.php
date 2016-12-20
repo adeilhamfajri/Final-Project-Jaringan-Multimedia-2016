@@ -157,7 +157,7 @@
             </li> 
 
             <li>
-                <a href="<?php echo base_url().'index.php/crud_gambar/get_gambar'; ?>">
+                <a href="<?php echo base_url().'index.php/crud_gambar/index'; ?>">
                     <i class="fa fa-desktop fa-fw"><div class="icon-bg bg-blue"></div></i>
                     <span class="menu-title">Upload Gambar</span>
                 </a>
