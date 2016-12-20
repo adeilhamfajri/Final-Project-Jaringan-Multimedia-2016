@@ -79,6 +79,7 @@ class Crud_danamasuk extends CI_Controller {
 	public function do_delete($id){
 		$this->db->where('id_dana', $id);
 		$this->db->delete('dana');
+		$this->db->query('UPDATE total_dana SET total_dana = (SELECT SUM(nominal) FROM dana)');
 		?>
 			<script>
 				location.href = '<?php echo base_url(); ?>index.php/crud_danamasuk/index';

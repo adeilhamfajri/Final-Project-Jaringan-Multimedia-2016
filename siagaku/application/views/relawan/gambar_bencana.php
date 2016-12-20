@@ -43,8 +43,16 @@
                                                 <th>Tanggal</th>
                                             </tr>
                                         </thead>
-                                        <?php $i=1; foreach ($data as $temp) { ?>    
                                         <tbody>
+                                            <tr>
+                                                <td><input name="fileToUpload" style="width: 100%; padding: 0px; margin: 0px;" type="file"></td>
+                                                <td></td>
+                                                <td><textarea name="deskripsi_gambar"></textarea></td>
+                                                <td><?php echo date('Y-m-d H:i:s'); ?></td>
+                                                <td>
+                                                <input data-loading-text="Loading..." type="submit" name="submit" class="btn btn-success" value="Tambah"></td>   
+                                            </tr>
+                                        <?php $i=1; foreach ($data as $temp) { ?>    
                                             <tr>
                                                 <td><img height="100" width="250" src="<?php echo base_url(); ?>/assets/img/bencana/<?php echo $temp['nama_gambar']; ?>" /></td>
                                                 <td></td>
@@ -57,15 +65,6 @@
                                                 </td>  
                                             </tr>
                                         <?php $i++;  } ?>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td><input type="text" name="deskripsi_gambar"></td>
-                                                <td></td>
-                                                <td>
-                                                    <input name="fileToUpload" style="width: 100%; padding: 0px; margin: 0px;" type="file">
-                                                <input data-loading-text="Loading..." style="width: 100%; padding: 0px; margin: 0px;" type="submit" name="submit" class="btn btn-primary" value="Simpan"></td>   
-                                            </tr>
                                         </tbody>                           
                                     </table>
 

@@ -161,7 +161,7 @@
             <li>
                 <a href="<?php echo base_url().'index.php/crud_log/index'; ?>">
                     <i class="fa fa-edit fa-fw"><div class="icon-bg bg-yellow"></div></i>
-                    <span class="menu-title">Log</span>
+                    <span class="menu-title">Pengeluaran</span>
                 </a>
             </li> 
 
