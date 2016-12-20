@@ -8,9 +8,11 @@ class Crud_log extends CI_Controller {
 	}
 
 	public function index(){
-		$data = $this->log_model->getLog();
+		$this->load->model('barang_model');
+		$data['barang'] = $this->barang_model->getAllBarang();
+		$data['log'] = $this->log_model->getLog();
 		$this->load->view('relawan/header');
-		$this->load->view('relawan/log', array('records'=>$data));
+		$this->load->view('relawan/log', $data);
 	}
 
 	public function insert(){
@@ -20,13 +22,13 @@ class Crud_log extends CI_Controller {
 		$harga = $_POST['harga'];
 
 		$data_insert =  array(
-			'tanggal' => 'NOW()',
 			'jumlah' => $jumlah,
 			'id_barang' => $id_barang,
 			'harga' => $harga,
 			);
 
 		$result = $this->log_model->insertLog($data_insert);
+		$this->db->query('UPDATE total_dana SET total_dana = (SELECT SUM(nominal) FROM dana)-(SELECT SUM(harga) FROM relawan_bencana.log)');
 		redirect('index.php/relawan/log');
 	}
 }

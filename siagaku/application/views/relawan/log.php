@@ -42,28 +42,43 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                     <tr>
-                                        <th>ID log</th>
                                         <th>Tanggal</th>
-                                        <th>ID Barang</th>
+                                        <th>Barang yang Dibeli</th>
                                         <th>Jumlah</th>
                                         <th>Harga (IDR)</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td><input type="text" name="id" /></td>
+                                        <td><?php echo date('Y-m-d H:i:s'); ?></td>
+                                        <td>
+                                            <select class="form-control" name="id">
+                                            <?php
+                                                foreach ($barang as $key) {
+                                            ?>
+                                                    <option value="<?php echo $key->id_barang; ?>">
+                                                        <?php echo $key->nama_barang; ?>
+                                                    </option>
+                                            <?php } ?>
+                                            </select>
+                                        </td>
                                         <td><input type="text" name="jumlah" /></td>
                                         <td><input type="text" name="harga" /></td>
                                         <td><button class="btn btn-success" type="submit">Tambah</button></td>   
                                     </tr>
                                     
-                                    <?php foreach($records as $row){?>
+                                    <?php foreach($log as $row){?>
                                     <tr>
-                                        <td><?php echo $row['id_log']; ?></td>
                                         <td><?php echo $row['tanggal']; ?></td>
-                                        <td><?php echo $row['id_barang']; ?></td>
+                                        <td>
+                                            <?php
+                                            foreach ($barang as $key) {
+                                                if ($key->id_barang == $row['id_barang']) {
+                                                    echo $key->nama_barang;
+                                                }
+                                            }
+                                            ?>
+                                        </td>
                                         <td><?php echo $row['jumlah']; ?></td>
                                         <td><?php echo $row['harga']; ?></td>
                                     <?php } ?>
