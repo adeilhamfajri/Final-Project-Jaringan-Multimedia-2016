@@ -19,7 +19,7 @@ class gambar_model extends CI_Model{
     {
 		$this->db->from('gambar');
 		$this->db->order_by("gambar.tanggal_gambar", "desc");
-        $this->db->limit(2);
+        $this->db->limit(4);
 		$query = $this->db->get();
 		return $query->result();
     }
