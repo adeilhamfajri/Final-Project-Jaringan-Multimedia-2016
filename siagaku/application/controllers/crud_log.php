@@ -4,7 +4,7 @@ class Crud_log extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('log_model');
-		$this->load->helper('url');
+		//$this->load->helper('url');
 	}
 
 	public function index(){
