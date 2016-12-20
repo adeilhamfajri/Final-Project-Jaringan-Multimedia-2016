@@ -35,6 +35,11 @@ class Crud_lokasi extends CI_Controller {
 			);
 
 		$res = $this->lokasi_model->insertLocation($data_insert);
+		?>
+			<script>
+				location.href = '<?php echo base_url(); ?>index.php/crud_lokasi/index';
+			</script>
+		<?php
 		
 	}
 

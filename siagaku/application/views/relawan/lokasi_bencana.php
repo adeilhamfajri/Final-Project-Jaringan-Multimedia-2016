@@ -44,16 +44,15 @@
                                 
                                     <thead>
                                     <tr>
-                                        <th>ID Lokasi</th>
                                         <th>Nama Lokasi</th>
                                         <th>Latitude</th>
                                         <th>Longitude</th>
                                         <th>Deskripsi</th>
+                                        <th>Aksi</th>
                                     </tr>
                                     </thead>
                                     <tbody>
 									<tr>
-                                        <td> </td>
                                         <td><input type="text" name="nama_lokasi" /></td>
                                         <td><input type="text" name="latitude" /></td>
                                         <td><input type="text" name="longitude" /></td>
@@ -63,15 +62,12 @@
                                     </tr>
                                     <?php foreach ($data as $temp) { ?>
                                     <tr>
-                                        <td><?php echo $temp['id_lokasi']; ?></td>
                                         <td><?php echo $temp['nama_lokasi']; ?></td>
                                         <td><?php echo $temp['latitude']; ?></td>
                                         <td><?php echo $temp['longitude']; ?></td>
-                                        <td><?php echo $temp['deskripsi']; ?></td>
+                                        <td width="50"><?php echo $temp['deskripsi']; ?></td>
                                         <td>
 											<a class="btn btn-warning" href="<?php echo base_url()."index.php/crud_lokasi/do_edit/".$temp['id_lokasi']; ?>">Edit</a>&nbsp;
-                                        </td>  
-										<td>
 											<a class="btn btn-danger" href="<?php echo base_url()."index.php/crud_lokasi/do_delete/".$temp['id_lokasi']; ?>">Hapus</a>
 										</td>
                                     </tr>

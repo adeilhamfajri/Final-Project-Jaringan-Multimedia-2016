@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+    if(isset($this->session->userdata['logged_in'])){
+?>
+    <script>
+        location.href = '<?php echo base_url(); ?>index.php/relawan/index';
+    </script>
+<?php
+    }
+?>
 <html lang="en">
 
 <head>
@@ -23,17 +32,18 @@
 			<div class="box-header">
 				<h2>Login Relawan</h2>
 			</div>
-			<label for="username">Username</label>
-			<br/>
-			<input type="text" id="username">
-			<br/>
-			<label for="password">Password</label>
-			<br/>
-			<input type="password" id="password">
-			<br/>  
-			<a href="<?php echo base_url().'index.php/relawan/index'; ?>"><button type="submit">Log In</button> </a>
-			<br/>
-			<a href="#"><p class="small">Lupa Password ?</p></a>
+			<form method="post" action="<?php echo base_url() ?>index.php/relawan/login">
+				<label for="username">Username</label>
+				<br/>
+				<input type="text" id="username" name="username">
+				<br/>
+				<label for="password">Password</label>
+				<br/>
+				<input type="password" id="password" name="password">
+				<br/>  
+				<input type="submit" value="Login">
+				<br/>
+			</form>
 		</div>
 	</div>
 </body>

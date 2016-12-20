@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<?php
+    if(!isset($this->session->userdata['logged_in'])){
+?>
+    <script>
+        location.href = '<?php echo base_url(); ?>index.php/home/login';
+    </script>
+<?php
+    }
+?>
 <html lang="en">
 <head>
     <title>Dashboard | Relawan</title>
@@ -58,7 +67,7 @@
                     <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-tasks fa-fw"></i><span class="badge badge-yellow">8</span></a>
                         
                     </li> -->
-                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/48.jpg" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">Ade Ilham Fajri</span>&nbsp;<span class="caret"></span></a>
+                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/48.jpg" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs"><?php echo $this->session->userdata['logged_in']; ?></span>&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-user pull-right">
                             <!-- <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
                             <li><a href="#"><i class="fa fa-calendar"></i>My Calendar</a></li>
@@ -66,7 +75,7 @@
                             <li><a href="#"><i class="fa fa-tasks"></i>My Tasks<span class="badge badge-success">7</span></a></li>
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-lock"></i>Lock Screen</a></li> -->
-                            <li><a href="Login.html"><i class="fa fa-key"></i>Log Out</a></li>
+                            <li><a href="<?php echo base_url(); ?>index.php/relawan/logout"><i class="fa fa-key"></i>Log Out</a></li>
                         </ul>
                     </li>
                     <!-- <li id="topbar-chat" class="hidden-xs"><a href="javascript:void(0)" data-step="4" data-intro="&lt;b&gt;Form chat&lt;/b&gt; keep you connecting with other coworker" data-position="left" class="btn-chat"><i class="fa fa-comments"></i><span class="badge badge-info">3</span></a></li> -->
@@ -116,28 +125,28 @@
             <div class="clearfix"></div>
             <li> 
                 <a href="<?php echo base_url().'index.php/crud_lokasi/get_location'; ?>">
-                    <i class="fa fa-send-o fa-fw"><div class="icon-bg bg-green"></div></i>
+                    <i class="fa fa-map-marker fa-fw"><div class="icon-bg bg-green"></div></i>
                     <span class="menu-title">Lokasi Bencana</span>
                 </a>     
             </li>
             
             <li>
                 <a href="<?php echo base_url().'index.php/crud_kebutuhan/kebutuhan_korban'; ?>">
-                    <i class="fa fa-th-list fa-fw"><div class="icon-bg bg-blue"></div></i>
+                    <i class="fa fa-plus-square fa-fw"><div class="icon-bg bg-blue"></div></i>
                     <span class="menu-title">Kebutuhan Korban</span>
                 </a>
             </li>
 
             <li>
                 <a href="<?php echo base_url().'index.php/crud_danamasuk/get_danamasuk'; ?>">
-                    <i class="fa fa-desktop fa-fw"><div class="icon-bg bg-blue"></div></i>
+                    <i class="fa fa-money fa-fw"><div class="icon-bg bg-blue"></div></i>
                     <span class="menu-title">Dana Masuk</span>
                 </a>
             </li>
 
             <li>
                 <a href="<?php echo base_url().'index.php/crud_donasibarang/bantuan_materi'; ?>">
-                    <i class="fa fa-edit fa-fw"><div class="icon-bg bg-red"></div></i>
+                    <i class="fa fa-shopping-cart fa-fw"><div class="icon-bg bg-red"></div></i>
                     <span class="menu-title">Bantuan Materi</span>
                 </a>
             </li>

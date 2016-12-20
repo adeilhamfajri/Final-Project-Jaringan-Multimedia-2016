@@ -24,6 +24,43 @@ class relawan extends CI_Controller {
 		$this->load->view('relawan/index');
 	}
 
+	public function login(){
+		$this->load->model('login_model');
+		$data = array(
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password')
+		);
+		$result = $this->login_model->login($data);
+		if ($result) {
+			$this->session->set_userdata('logged_in', $this->input->post('username'));
+		?>
+			<script>
+				location.href = '<?php echo base_url(); ?>index.php/relawan/index';
+			</script>
+		<?php
+		}else{
+		?>
+			<script>
+				alert("Username atau Password Anda Salah");
+				location.href = '<?php echo base_url(); ?>index.php/home/login';
+			</script>
+		<?php
+		}
+	}
+
+	public function logout(){
+		$sess_array = array(
+				'username' => ''
+		);
+		$this->session->unset_userdata('logged_in', $sess_array);
+		?>
+			<script>
+				alert("Logout Berhasil");
+				location.href = '<?php echo base_url(); ?>index.php/home/login';
+			</script>
+		<?php
+	}
+
 	// public function lokasi_bencana()
 	// {
 	// 	$this->load->view('relawan/lokasi_bencana');
