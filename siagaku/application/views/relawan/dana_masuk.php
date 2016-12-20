@@ -53,7 +53,7 @@
                                         <td><input type="text" name="nominal" /></td>
                                         <td><input type="text" name="nama_donatur" /></td>
                                         <td><?php echo date('Y-m-d'); ?></td>
-                                        <td><button class="label label-sm label-success" type="submit">Tambah</button></td>   
+                                        <td><button class="btn btn-success" type="submit">Tambah</button></td>   
                                     </tr>
                                     <?php foreach ($data as $temp) { ?>
                                     <tr>
