@@ -73,5 +73,15 @@ class Crud_danamasuk extends CI_Controller {
 		if($res >= 1)
 			redirect('index.php/crud_danamasuk/index');
 	}
+	
+	public function do_delete($id){
+		$this->db->where('id_dana', $id);
+		$this->db->delete('dana');
+		?>
+			<script>
+				location.href = '<?php echo base_url(); ?>index.php/crud_danamasuk/index';
+			</script>
+		<?php
+	}
 		
 }
