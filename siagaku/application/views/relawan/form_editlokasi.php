@@ -58,9 +58,9 @@
                                         <td><input type="text" name="nama_lokasi" value="<?php echo $nama_lokasi; ?>" /></td>
                                         <td><input type="text" name="latitude" value="<?php echo $latitude; ?>" /></td>
                                         <td><input type="text" name="longitude" value="<?php echo $longitude; ?>" /></td>
-                                        <td><input type="text" name="deskripsi" value="<?php echo $deskripsi; ?>" /></td>
+                                        <td><textarea name="deskripsi" value="<?php echo $deskripsi; ?>" /><?php echo $deskripsi; ?></textarea></td>
                                         
-                                        <td><button class="label label-sm label-success" type="submit">Update</button></td>   
+                                        <td><button class="btn btn-success" type="submit">Update</button></td>   
                                     </tr>
                                    
                                    
