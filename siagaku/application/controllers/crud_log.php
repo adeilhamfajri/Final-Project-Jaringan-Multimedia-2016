@@ -29,6 +29,7 @@ class Crud_log extends CI_Controller {
 
 		$result = $this->log_model->insertLog($data_insert);
 		$this->db->query('UPDATE total_dana SET total_dana = (SELECT SUM(nominal) FROM dana)-(SELECT SUM(harga) FROM relawan_bencana.log)');
+		$this->db->query('UPDATE kebutuhan SET jumlah_terpenuhi = (SELECT SUM(jumlah) FROM LOG WHERE id_barang=kebutuhan.`id_barang`)');
 		redirect('index.php/relawan/log');
 	}
 }
