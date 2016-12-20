@@ -250,27 +250,18 @@
             </div>
         </div>
         <div class="row">
+		<?php foreach($gambar as $row) { ?>
             <div class="col-md-6">
               <div class="thumbnail">
-                <a href="<?php echo base_url().'assets/' ?>img/disaster-pict-1.jpg" target="_blank">
-                  <img src="<?php echo base_url().'assets/' ?>img/disaster-pict-1.jpg" alt="Disaster Picture" style="width:100%">
+                <a href="<?php echo base_url(); ?>/assets/img/bencana/<?php echo $row->nama_gambar; ?>" target="_blank">
+                  <img style="height:300px; width:900px;" src="<?php echo base_url(); ?>/assets/img/bencana/<?php echo $row->nama_gambar; ?>">
                   <div class="caption">
-                    <p><span class="bold">India</span>, Tue 01-01-2009 06:00:25<br>Kondisi terkini evakuasi korban banjir bandang.</p>
+                    <p><?php echo $row->tanggal_gambar; ?><br><?php echo $row->deskripsi_gambar; ?></p>
                   </div>
                 </a>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="thumbnail">
-                <a href="<?php echo base_url().'assets/' ?>img/disaster-pict-2.jpg" target="_blank">
-                  <img src="<?php echo base_url().'assets/' ?>img/disaster-pict-2.jpg" alt="Disaster Picture" style="width:100%">
-                  <div class="caption">
-                    <p><span class="bold">Filipina</span>, Mon 18-02-2007 08:02:34<br>Kondisi terkini setelah gempa bumi berakhir.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-
+		<?php } ?>
         </div>
     </div>
 </section>
