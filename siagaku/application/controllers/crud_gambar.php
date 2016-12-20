@@ -48,7 +48,9 @@ class crud_gambar extends CI_Controller {
 			 );
 
 				$res = $this->gambar_model->addDataImage($data_insert);
-				 echo $_FILES["fileToUpload"]["name"];
+				
+                redirect('index.php/crud_gambar/get_gambar', 'refresh:1');
+
 				
 				$uploadOk = 1;
 			} 

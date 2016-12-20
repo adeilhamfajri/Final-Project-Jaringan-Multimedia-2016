@@ -29,7 +29,7 @@
 
                      <div class="col-lg-12">
                         <div class="panel panel-violet">
-                            <div class="panel-heading" align="center">Kelola Donasi Dana</div>
+                            <div class="panel-heading" align="center">Realtime Gambar Bencana</div>
                                 <div class="panel-body">
                                     
                                     <form action="<?php echo base_url().'index.php/crud_gambar/do_addimage' ?>" method="post" enctype="multipart/form-data">
@@ -43,20 +43,20 @@
                                                 <th>Tanggal</th>
                                             </tr>
                                         </thead>
-
+                                        <?php $i=1; foreach ($data as $temp) { ?>    
                                         <tbody>
                                             <tr>
-                                                <td><img height="100" width="250" src="" /></td>
+                                                <td><img height="100" width="250" src="<?php echo base_url(); ?>/assets/img/bencana/<?php echo $temp['nama_gambar']; ?>" /></td>
                                                 <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td><?php echo $temp['deskripsi_gambar']; ?></td>
+                                                <td><?php echo $temp['tanggal_gambar']; ?></td>
                                                 
                                                 <td>
                                                 <a class="btn btn-warning" href="">Edit</a>&nbsp;
                                                 <a class="btn btn-danger" href="">Hapus</a>
                                                 </td>  
                                             </tr>
-
+                                        <?php $i++;  } ?>
                                             <tr>
                                                 <td><img height="100" width="250" src="" /></td>
                                                 <td></td>
