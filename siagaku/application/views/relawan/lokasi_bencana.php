@@ -52,6 +52,15 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+									<tr>
+                                        <td> </td>
+                                        <td><input type="text" name="nama_lokasi" /></td>
+                                        <td><input type="text" name="latitude" /></td>
+                                        <td><input type="text" name="longitude" /></td>
+                                        <td><input type="text" name="deskripsi" /></td>
+                                        
+                                        <td><button class="btn btn-success" type="submit">Tambah</button></td>   
+                                    </tr>
                                     <?php foreach ($data as $temp) { ?>
                                     <tr>
                                         <td><?php echo $temp['id_lokasi']; ?></td>
@@ -60,20 +69,13 @@
                                         <td><?php echo $temp['longitude']; ?></td>
                                         <td><?php echo $temp['deskripsi']; ?></td>
                                         <td>
-                                            <button>Hapus Data</button>
-                                            <a class="btn btn-block btn-info" value="Edit" href="<?php echo base_url()."index.php/crud_lokasi/do_edit/".$temp['id_lokasi']; ?>">Edit</a>
+											<a class="btn btn-warning" href="<?php echo base_url()."index.php/crud_lokasi/do_edit/".$temp['id_lokasi']; ?>">Edit</a>&nbsp;
                                         </td>  
+										<td>
+											<a class="btn btn-danger" href="<?php echo base_url()."index.php/crud_lokasi/do_delete/".$temp['id_lokasi']; ?>">Hapus</a>
+										</td>
                                     </tr>
                                      <?php   } ?>
-                                    <tr>
-                                        <td> </td>
-                                        <td><input type="text" name="nama_lokasi" /></td>
-                                        <td><input type="text" name="latitude" /></td>
-                                        <td><input type="text" name="longitude" /></td>
-                                        <td><input type="text" name="deskripsi" /></td>
-                                        
-                                        <td><button class="label label-sm label-success" type="submit">Tambah</button></td>   
-                                    </tr>
                                    
                                    
                                     </tbody>

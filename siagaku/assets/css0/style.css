@@ -1595,7 +1595,7 @@ a.btn {
 .main-navigation {
   -webkit-transition: all 0.4s ease 0s;
           transition: all 0.4s ease 0s;
-  background-color: transparent;
+  background-color: white;
   min-height: 90px;
   height: 117px;
   padding-top: 30px; }

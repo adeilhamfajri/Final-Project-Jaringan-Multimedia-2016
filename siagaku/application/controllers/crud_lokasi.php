@@ -77,5 +77,15 @@ class Crud_lokasi extends CI_Controller {
 			redirect('index.php/crud_lokasi/index');
 
 	}
+	
+	public function do_delete($id){
+		$this->db->where('id_lokasi', $id);
+		$this->db->delete('lokasi');
+		?>
+			<script>
+				location.href = '<?php echo base_url(); ?>index.php/crud_lokasi/index';
+			</script>
+		<?php
+	}
 
 }

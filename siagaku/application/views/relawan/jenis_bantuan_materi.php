@@ -41,6 +41,7 @@
                                 <table class="table table-hover table-striped">
                                     <thead>
                                     <tr>
+                                        <th>ID</th>
                                         <th>Nama Materi</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -48,6 +49,7 @@
                                     <tbody>
                                     <tr>
                                         <form method="post" action="<?php echo base_url(); ?>index.php/crud_jenisbarang/tambah_barang">
+                                            <td></td>
                                             <td><input type="text" name="nama_barang" /></td>
                                             <td><input type="submit" class="btn btn-success" value="Tambah"></td>   
                                         </form>
@@ -57,6 +59,7 @@
                                         foreach($barang as $baris){
                                     ?>
                                         <tr>
+                                            <td><?php echo $baris->id_barang; ?></td>
                                             <td><?php echo $baris->nama_barang; ?></td>
                                             <td>
                                             <a class="btn btn-danger" href="<?php echo base_url(); ?>index.php/crud_jenisbarang/hapus_barang/<?php echo $baris->id_barang; ?>">Hapus Data</a>
