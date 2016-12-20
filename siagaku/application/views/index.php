@@ -313,7 +313,7 @@
               <div class="thumbnail">
                 <a href="<?php echo base_url(); ?>/assets/img/bencana/<?php echo $row->nama_gambar; ?>" target="_blank">
                   <img style="height:300px; width:900px;" src="<?php echo base_url(); ?>/assets/img/bencana/<?php echo $row->nama_gambar; ?>">
-                  <div class="caption">
+                  <div class="caption" style="height:150px">
                     <p><?php echo $row->tanggal_gambar; ?><br><?php echo $row->deskripsi_gambar; ?></p>
                   </div>
                 </a>
