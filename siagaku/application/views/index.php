@@ -248,7 +248,7 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="section-heading">
-                    <h2 class="line left"><span class="bold">Daftar Pengeluaran</span></h2>
+                    <h2 class="line left"><span class="bold">Pengeluaran</span></h2>
                     <p class="subtitle">Lihat daftar pengeluaran untuk pembelian logistik bantuan.</p>
                 </div>
 
