@@ -62,7 +62,7 @@
                                         <td><?php echo $temp['tanggal']; ?></td>
                                         <td>
                                             <a class="btn btn-warning" value="Edit" href="<?php echo base_url()."index.php/crud_danamasuk/do_edit/".$temp['id_dana']; ?>">Edit</a>&nbsp;
-                                            <a class="btn btn-danger" value="Edit" href="<?php echo base_url()."index.php/crud_danamasuk/do_edit/".$temp['id_dana']; ?>">Hapus</a>
+                                            <a class="btn btn-danger" value="Edit" href="<?php echo base_url()."index.php/crud_danamasuk/do_delete/".$temp['id_dana']; ?>">Hapus</a>
                                         </td>  
                                     </tr>
                                     <?php   } ?>

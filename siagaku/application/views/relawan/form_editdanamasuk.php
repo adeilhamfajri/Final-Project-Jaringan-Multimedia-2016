@@ -54,7 +54,7 @@
                                         <td><input type="hidden" name="id_dana" value="<?php echo $id_dana; ?>" /></td>
                                         <td><input type="text" name="nominal" value="<?php echo $nominal; ?>" /></td>
                                         <td><input type="text" name="nama_donatur" value="<?php echo $nama_donatur; ?>" /></td>
-                                        <td><button class="label label-sm label-success" type="submit">Update</button></td>   
+                                        <td><button class="btn btn-success" type="submit">Update</button></td>   
                                     </tr>
                                    
                                    

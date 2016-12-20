@@ -69,7 +69,9 @@ class Crud_danamasuk extends CI_Controller {
 
 		$where = array('id_dana' => $id_dana);
 		$res = $this->dana_model->updateDana($data_update, $where);
-
+		
+		$this->db->query('UPDATE total_dana SET total_dana = (SELECT SUM(nominal) FROM dana)');
+		
 		if($res >= 1)
 			redirect('index.php/crud_danamasuk/index');
 	}
