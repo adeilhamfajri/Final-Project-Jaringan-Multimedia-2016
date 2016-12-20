@@ -31,7 +31,11 @@
                         <div class="panel panel-violet">
                             <div class="panel-heading" align="center">Kelola Donasi Dana</div>
                                 <div class="panel-body">
-                                    <form method="POST" action="<?php echo base_url().'index.php/crud_gambar/do_addimage' ?>" enctype="multipart/form-data">
+                                    
+                                    <form action="<?php echo base_url().'index.php/crud_gambar/do_addimage' ?>" method="post" enctype="multipart/form-data">
+                                 <!--    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form> -->
 
                                     <table class="table table-hover">
                                         <thead>  
@@ -64,13 +68,13 @@
                                                 <td><input type="text" name="deskripsi_gambar"></td>
                                                 <td></td>
                                                 <td>
-                                                    <input style="width: 100%; padding: 0px; margin: 0px;" type="file" value="" name="userfile">
-                                                <button data-loading-text="Loading..." style="width: 100%; padding: 0px; margin: 0px;" type="submit" name="submit" class="btn btn-primary">Submit</button></td>   
+                                                    <input name="fileToUpload" style="width: 100%; padding: 0px; margin: 0px;" type="file">
+                                                <input data-loading-text="Loading..." style="width: 100%; padding: 0px; margin: 0px;" type="submit" name="submit" class="btn btn-primary" value="Simpan"></td>   
                                             </tr>
                                         </tbody>                           
                                     </table>
 
-                                    </form>
+                                    <!-- </form> -->
                                     <?php echo $error; ?>
                                 </div>
                         </div>
