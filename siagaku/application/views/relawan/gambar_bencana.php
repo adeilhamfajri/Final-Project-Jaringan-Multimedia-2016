@@ -33,9 +33,6 @@
                                 <div class="panel-body">
                                     
                                     <form action="<?php echo base_url().'index.php/crud_gambar/do_addimage' ?>" method="post" enctype="multipart/form-data">
-                                 <!--    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form> -->
 
                                     <table class="table table-hover">
                                         <thead>  
@@ -44,8 +41,6 @@
                                                 <th></th>
                                                 <th style="width:10%;">Deskripsi Gambar</th>
                                                 <th>Tanggal</th>
-
-
                                             </tr>
                                         </thead>
 
@@ -74,8 +69,8 @@
                                         </tbody>                           
                                     </table>
 
-                                    <!-- </form> -->
-                                    <?php echo $error; ?>
+                                    </form>
+                                
                                 </div>
                         </div>
                     </div>
