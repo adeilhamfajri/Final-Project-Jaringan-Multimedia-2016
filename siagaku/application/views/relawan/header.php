@@ -116,28 +116,28 @@
             <div class="clearfix"></div>
             <li> 
                 <a href="<?php echo base_url().'index.php/crud_lokasi/get_location'; ?>">
-                    <i class="fa fa-send-o fa-fw"><div class="icon-bg bg-green"></div></i>
+                    <i class="fa fa-map-marker fa-fw"><div class="icon-bg bg-green"></div></i>
                     <span class="menu-title">Lokasi Bencana</span>
                 </a>     
             </li>
             
             <li>
                 <a href="<?php echo base_url().'index.php/crud_kebutuhan/kebutuhan_korban'; ?>">
-                    <i class="fa fa-th-list fa-fw"><div class="icon-bg bg-blue"></div></i>
+                    <i class="fa fa-plus-square fa-fw"><div class="icon-bg bg-blue"></div></i>
                     <span class="menu-title">Kebutuhan Korban</span>
                 </a>
             </li>
 
             <li>
                 <a href="<?php echo base_url().'index.php/crud_danamasuk/get_danamasuk'; ?>">
-                    <i class="fa fa-desktop fa-fw"><div class="icon-bg bg-blue"></div></i>
+                    <i class="fa fa-money fa-fw"><div class="icon-bg bg-blue"></div></i>
                     <span class="menu-title">Dana Masuk</span>
                 </a>
             </li>
 
             <li>
                 <a href="<?php echo base_url().'index.php/crud_donasibarang/bantuan_materi'; ?>">
-                    <i class="fa fa-edit fa-fw"><div class="icon-bg bg-red"></div></i>
+                    <i class="fa fa-shopping-cart fa-fw"><div class="icon-bg bg-red"></div></i>
                     <span class="menu-title">Bantuan Materi</span>
                 </a>
             </li>

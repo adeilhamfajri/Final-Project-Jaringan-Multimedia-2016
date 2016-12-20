@@ -23,6 +23,7 @@
 			<div class="box-header">
 				<h2>Login Relawan</h2>
 			</div>
+
 			<label for="username">Username</label>
 			<br/>
 			<input type="text" id="username">
@@ -33,7 +34,6 @@
 			<br/>  
 			<a href="<?php echo base_url().'index.php/relawan/index'; ?>"><button type="submit">Log In</button> </a>
 			<br/>
-			<a href="#"><p class="small">Lupa Password ?</p></a>
 		</div>
 	</div>
 </body>
