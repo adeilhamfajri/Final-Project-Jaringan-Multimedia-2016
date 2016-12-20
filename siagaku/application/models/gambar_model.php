@@ -25,6 +25,15 @@ class gambar_model extends CI_Model{
         return $res;
     }
 
+    public function GetGambar($where="")
+    {
+        $data = $this->db->query('select * from gambar '.$where);
+        return $data->result_array();
+    }
 
+        public function updateGambar($Datagambar, $where){
+        $res = $this->db->update('gambar', $Datagambar, $where);
+        return $res;
+    }
 
 }

@@ -52,13 +52,13 @@
                                                 <td><?php echo $temp['tanggal_gambar']; ?></td>
                                                 
                                                 <td>
-                                                <a class="btn btn-warning" href="">Edit</a>&nbsp;
-                                                <a class="btn btn-danger" href="">Hapus</a>
+                                                <a class="btn btn-warning" href="<?php echo base_url()."index.php/crud_gambar/do_editImage/".$temp['id_gambar']; ?>">Edit</a>&nbsp;
+                                               
                                                 </td>  
                                             </tr>
                                         <?php $i++;  } ?>
                                             <tr>
-                                                <td><img height="100" width="250" src="" /></td>
+                                                <td></td>
                                                 <td></td>
                                                 <td><input type="text" name="deskripsi_gambar"></td>
                                                 <td></td>
