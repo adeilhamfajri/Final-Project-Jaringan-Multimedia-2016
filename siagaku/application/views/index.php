@@ -70,6 +70,7 @@
             <li><a href="#donasibarang"><i class="fa-mobile"></i>Donasi Barang</a></li>
             <!-- pricing = Kebutuhan -->
             <li><a href="#kebutuhan"><i class="fa-usd"></i>Kebutuhan</a></li>
+            <li><a href="#pengeluaran"><i class="fa-usd"></i>Pengeluaran</a></li>
             <li><a href="#kondisiterkini"><i class="fa-usd"></i>Kondisi Terkini</a></li>
          <!--    <li><a href="login.html">Login</a></li> -->
         </ul>
@@ -130,7 +131,15 @@
             <div class="col-md-5">
                 <div class="section-heading">
                     <h2 class="line left"><span class="bold">Dana Terkumpul</span></h2>
-                    <p class="subtitle">Lihat donasi dana yang masuk.</p>
+                    <p class="subtitle">
+                        Total Dana =
+                        <?php
+                            $query = $this->db->query("select * from total_dana");
+                            foreach ($query->result() as $key) {
+                                echo $key->total_dana;
+                            }
+                        ?>
+                    </p>
                 </div>
 
                 <p><span class="bold">Kami</span> merancang siagaku sebagai platform penanggulangan bencana yang transparan. Anda dapat kapan saja melihat seluruh donasi yang masuk.</p>
@@ -249,7 +258,15 @@
             <div class="col-md-5">
                 <div class="section-heading">
                     <h2 class="line left"><span class="bold">Pengeluaran</span></h2>
-                    <p class="subtitle">Lihat daftar pengeluaran untuk pembelian logistik bantuan.</p>
+                    <p class="subtitle">
+                        Total Dana =
+                        <?php
+                            $query = $this->db->query("select * from total_dana");
+                            foreach ($query->result() as $key) {
+                                echo $key->total_dana;
+                            }
+                        ?>
+                    </p>
                 </div>
 
                 <p><span class="bold">Kami</span> memiliki relawan terpercaya yang selalu memberikan informasi kebutuhan korban bencara secara actual.</p>
